@@ -15,6 +15,26 @@
 		0134238F1D6C4B6700799E34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0134238D1D6C4B6700799E34 /* LaunchScreen.storyboard */; };
 		0134239A1D6C4B6700799E34 /* JYObjectModuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 013423991D6C4B6700799E34 /* JYObjectModuleTests.m */; };
 		013423A51D6C4B6700799E34 /* JYObjectModuleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 013423A41D6C4B6700799E34 /* JYObjectModuleUITests.m */; };
+		01A111F01D6DD52700131431 /* JYObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A111EF1D6DD52700131431 /* JYObject.m */; };
+		01A111F31D6DD54A00131431 /* JYImageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A111F21D6DD54A00131431 /* JYImageObject.m */; };
+		01A111F61D6DD6AC00131431 /* JYBannerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A111F51D6DD6AC00131431 /* JYBannerObject.m */; };
+		01A111F91D6DDAA000131431 /* JYLocationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A111F81D6DDAA000131431 /* JYLocationObject.m */; };
+		01A111FC1D6DDBB200131431 /* JYCommentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A111FB1D6DDBB200131431 /* JYCommentObject.m */; };
+		01A111FF1D6E87EC00131431 /* JYUserObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A111FE1D6E87EC00131431 /* JYUserObject.m */; };
+		01A112021D6E8AB600131431 /* JYPostObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112011D6E8AB600131431 /* JYPostObject.m */; };
+		01A112051D6E8CFD00131431 /* JYStringObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112041D6E8CFD00131431 /* JYStringObject.m */; };
+		01A1120B1D6E9E0400131431 /* JYPushNotificationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A1120A1D6E9E0400131431 /* JYPushNotificationObject.m */; };
+		01A1120E1D6EA5A000131431 /* JYIdentifierObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A1120D1D6EA5A000131431 /* JYIdentifierObject.m */; };
+		01A112111D6EA6FE00131431 /* JYOrderObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112101D6EA6FE00131431 /* JYOrderObject.m */; };
+		01A112141D6EA76200131431 /* JYProductObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112131D6EA76200131431 /* JYProductObject.m */; };
+		01A112171D6EA96700131431 /* JYIntegerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112161D6EA96700131431 /* JYIntegerObject.m */; };
+		01A1121A1D6EBFC200131431 /* JYChainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112191D6EBFC200131431 /* JYChainObject.m */; };
+		01A1121D1D6EC85600131431 /* JYProductCategoryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A1121C1D6EC85600131431 /* JYProductCategoryObject.m */; };
+		01A112241D6EC94700131431 /* JYPageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112231D6EC94700131431 /* JYPageObject.m */; };
+		01A112271D6ECA1E00131431 /* JYWalletObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112261D6ECA1E00131431 /* JYWalletObject.m */; };
+		01A1122A1D6ECB2000131431 /* JYWithdrawalObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112291D6ECB2000131431 /* JYWithdrawalObject.m */; };
+		01A1122D1D6ECD3C00131431 /* JYCashbackObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A1122C1D6ECD3C00131431 /* JYCashbackObject.m */; };
+		01A112301D6ED53C00131431 /* JYResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A1122F1D6ED53C00131431 /* JYResponseObject.m */; };
 		26E28937F087F5FF16E2F54D /* libPods-JYObjectModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF76E61B47DFF0171C2DC70F /* libPods-JYObjectModule.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +72,46 @@
 		013423A01D6C4B6700799E34 /* JYObjectModuleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JYObjectModuleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		013423A41D6C4B6700799E34 /* JYObjectModuleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYObjectModuleUITests.m; sourceTree = "<group>"; };
 		013423A61D6C4B6700799E34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01A111EE1D6DD52700131431 /* JYObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYObject.h; sourceTree = "<group>"; };
+		01A111EF1D6DD52700131431 /* JYObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYObject.m; sourceTree = "<group>"; };
+		01A111F11D6DD54A00131431 /* JYImageObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYImageObject.h; sourceTree = "<group>"; };
+		01A111F21D6DD54A00131431 /* JYImageObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYImageObject.m; sourceTree = "<group>"; };
+		01A111F41D6DD6AC00131431 /* JYBannerObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBannerObject.h; sourceTree = "<group>"; };
+		01A111F51D6DD6AC00131431 /* JYBannerObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBannerObject.m; sourceTree = "<group>"; };
+		01A111F71D6DDAA000131431 /* JYLocationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLocationObject.h; sourceTree = "<group>"; };
+		01A111F81D6DDAA000131431 /* JYLocationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLocationObject.m; sourceTree = "<group>"; };
+		01A111FA1D6DDBB200131431 /* JYCommentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCommentObject.h; sourceTree = "<group>"; };
+		01A111FB1D6DDBB200131431 /* JYCommentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCommentObject.m; sourceTree = "<group>"; };
+		01A111FD1D6E87EC00131431 /* JYUserObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYUserObject.h; sourceTree = "<group>"; };
+		01A111FE1D6E87EC00131431 /* JYUserObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYUserObject.m; sourceTree = "<group>"; };
+		01A112001D6E8AB600131431 /* JYPostObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYPostObject.h; sourceTree = "<group>"; };
+		01A112011D6E8AB600131431 /* JYPostObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYPostObject.m; sourceTree = "<group>"; };
+		01A112031D6E8CFD00131431 /* JYStringObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYStringObject.h; sourceTree = "<group>"; };
+		01A112041D6E8CFD00131431 /* JYStringObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYStringObject.m; sourceTree = "<group>"; };
+		01A112091D6E9E0400131431 /* JYPushNotificationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYPushNotificationObject.h; sourceTree = "<group>"; };
+		01A1120A1D6E9E0400131431 /* JYPushNotificationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYPushNotificationObject.m; sourceTree = "<group>"; };
+		01A1120C1D6EA5A000131431 /* JYIdentifierObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYIdentifierObject.h; sourceTree = "<group>"; };
+		01A1120D1D6EA5A000131431 /* JYIdentifierObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYIdentifierObject.m; sourceTree = "<group>"; };
+		01A1120F1D6EA6FE00131431 /* JYOrderObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYOrderObject.h; sourceTree = "<group>"; };
+		01A112101D6EA6FE00131431 /* JYOrderObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYOrderObject.m; sourceTree = "<group>"; };
+		01A112121D6EA76200131431 /* JYProductObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYProductObject.h; sourceTree = "<group>"; };
+		01A112131D6EA76200131431 /* JYProductObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYProductObject.m; sourceTree = "<group>"; };
+		01A112151D6EA96700131431 /* JYIntegerObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYIntegerObject.h; sourceTree = "<group>"; };
+		01A112161D6EA96700131431 /* JYIntegerObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYIntegerObject.m; sourceTree = "<group>"; };
+		01A112181D6EBFC200131431 /* JYChainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYChainObject.h; sourceTree = "<group>"; };
+		01A112191D6EBFC200131431 /* JYChainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYChainObject.m; sourceTree = "<group>"; };
+		01A1121B1D6EC85600131431 /* JYProductCategoryObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYProductCategoryObject.h; sourceTree = "<group>"; };
+		01A1121C1D6EC85600131431 /* JYProductCategoryObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYProductCategoryObject.m; sourceTree = "<group>"; };
+		01A112221D6EC94700131431 /* JYPageObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYPageObject.h; sourceTree = "<group>"; };
+		01A112231D6EC94700131431 /* JYPageObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYPageObject.m; sourceTree = "<group>"; };
+		01A112251D6ECA1E00131431 /* JYWalletObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYWalletObject.h; sourceTree = "<group>"; };
+		01A112261D6ECA1E00131431 /* JYWalletObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYWalletObject.m; sourceTree = "<group>"; };
+		01A112281D6ECB2000131431 /* JYWithdrawalObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYWithdrawalObject.h; sourceTree = "<group>"; };
+		01A112291D6ECB2000131431 /* JYWithdrawalObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYWithdrawalObject.m; sourceTree = "<group>"; };
+		01A1122B1D6ECD3C00131431 /* JYCashbackObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCashbackObject.h; sourceTree = "<group>"; };
+		01A1122C1D6ECD3C00131431 /* JYCashbackObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCashbackObject.m; sourceTree = "<group>"; };
+		01A1122E1D6ED53C00131431 /* JYResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYResponseObject.h; sourceTree = "<group>"; };
+		01A1122F1D6ED53C00131431 /* JYResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYResponseObject.m; sourceTree = "<group>"; };
 		60CC7FE29AC188273B1DD6F0 /* Pods-JYObjectModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYObjectModule.release.xcconfig"; path = "Pods/Target Support Files/Pods-JYObjectModule/Pods-JYObjectModule.release.xcconfig"; sourceTree = "<group>"; };
 		BD7ADAD0C974A780565ACC78 /* Pods-JYObjectModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYObjectModule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JYObjectModule/Pods-JYObjectModule.debug.xcconfig"; sourceTree = "<group>"; };
 		BF76E61B47DFF0171C2DC70F /* libPods-JYObjectModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JYObjectModule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +172,7 @@
 				013423831D6C4B6700799E34 /* AppDelegate.m */,
 				013423851D6C4B6700799E34 /* ViewController.h */,
 				013423861D6C4B6700799E34 /* ViewController.m */,
+				01A111ED1D6DD52700131431 /* Models */,
 				013423881D6C4B6700799E34 /* Main.storyboard */,
 				0134238B1D6C4B6700799E34 /* Assets.xcassets */,
 				0134238D1D6C4B6700799E34 /* LaunchScreen.storyboard */,
@@ -145,6 +206,61 @@
 				013423A61D6C4B6700799E34 /* Info.plist */,
 			);
 			path = JYObjectModuleUITests;
+			sourceTree = "<group>";
+		};
+		01A111ED1D6DD52700131431 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01A112211D6EC94700131431 /* Normal */,
+				01A111EE1D6DD52700131431 /* JYObject.h */,
+				01A111EF1D6DD52700131431 /* JYObject.m */,
+				01A112001D6E8AB600131431 /* JYPostObject.h */,
+				01A112011D6E8AB600131431 /* JYPostObject.m */,
+				01A111FD1D6E87EC00131431 /* JYUserObject.h */,
+				01A111FE1D6E87EC00131431 /* JYUserObject.m */,
+				01A1120F1D6EA6FE00131431 /* JYOrderObject.h */,
+				01A112101D6EA6FE00131431 /* JYOrderObject.m */,
+				01A112181D6EBFC200131431 /* JYChainObject.h */,
+				01A112191D6EBFC200131431 /* JYChainObject.m */,
+				01A112251D6ECA1E00131431 /* JYWalletObject.h */,
+				01A112261D6ECA1E00131431 /* JYWalletObject.m */,
+				01A111F11D6DD54A00131431 /* JYImageObject.h */,
+				01A111F21D6DD54A00131431 /* JYImageObject.m */,
+				01A112031D6E8CFD00131431 /* JYStringObject.h */,
+				01A112041D6E8CFD00131431 /* JYStringObject.m */,
+				01A112151D6EA96700131431 /* JYIntegerObject.h */,
+				01A112161D6EA96700131431 /* JYIntegerObject.m */,
+				01A111F41D6DD6AC00131431 /* JYBannerObject.h */,
+				01A111F51D6DD6AC00131431 /* JYBannerObject.m */,
+				01A112121D6EA76200131431 /* JYProductObject.h */,
+				01A112131D6EA76200131431 /* JYProductObject.m */,
+				01A111F71D6DDAA000131431 /* JYLocationObject.h */,
+				01A111F81D6DDAA000131431 /* JYLocationObject.m */,
+				01A1120C1D6EA5A000131431 /* JYIdentifierObject.h */,
+				01A1120D1D6EA5A000131431 /* JYIdentifierObject.m */,
+				01A111FA1D6DDBB200131431 /* JYCommentObject.h */,
+				01A111FB1D6DDBB200131431 /* JYCommentObject.m */,
+				01A1122B1D6ECD3C00131431 /* JYCashbackObject.h */,
+				01A1122C1D6ECD3C00131431 /* JYCashbackObject.m */,
+				01A112281D6ECB2000131431 /* JYWithdrawalObject.h */,
+				01A112291D6ECB2000131431 /* JYWithdrawalObject.m */,
+				01A112091D6E9E0400131431 /* JYPushNotificationObject.h */,
+				01A1120A1D6E9E0400131431 /* JYPushNotificationObject.m */,
+				01A1121B1D6EC85600131431 /* JYProductCategoryObject.h */,
+				01A1121C1D6EC85600131431 /* JYProductCategoryObject.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01A112211D6EC94700131431 /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+				01A112221D6EC94700131431 /* JYPageObject.h */,
+				01A112231D6EC94700131431 /* JYPageObject.m */,
+				01A1122E1D6ED53C00131431 /* JYResponseObject.h */,
+				01A1122F1D6ED53C00131431 /* JYResponseObject.m */,
+			);
+			path = Normal;
 			sourceTree = "<group>";
 		};
 		378E786BB84A00029C0FE7BD /* Pods */ = {
@@ -346,8 +462,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				013423871D6C4B6700799E34 /* ViewController.m in Sources */,
+				01A111FC1D6DDBB200131431 /* JYCommentObject.m in Sources */,
 				013423841D6C4B6700799E34 /* AppDelegate.m in Sources */,
 				013423811D6C4B6700799E34 /* main.m in Sources */,
+				01A112241D6EC94700131431 /* JYPageObject.m in Sources */,
+				01A1122A1D6ECB2000131431 /* JYWithdrawalObject.m in Sources */,
+				01A112171D6EA96700131431 /* JYIntegerObject.m in Sources */,
+				01A1121D1D6EC85600131431 /* JYProductCategoryObject.m in Sources */,
+				01A1120E1D6EA5A000131431 /* JYIdentifierObject.m in Sources */,
+				01A111F31D6DD54A00131431 /* JYImageObject.m in Sources */,
+				01A112301D6ED53C00131431 /* JYResponseObject.m in Sources */,
+				01A112021D6E8AB600131431 /* JYPostObject.m in Sources */,
+				01A111F01D6DD52700131431 /* JYObject.m in Sources */,
+				01A111F91D6DDAA000131431 /* JYLocationObject.m in Sources */,
+				01A1122D1D6ECD3C00131431 /* JYCashbackObject.m in Sources */,
+				01A111FF1D6E87EC00131431 /* JYUserObject.m in Sources */,
+				01A112111D6EA6FE00131431 /* JYOrderObject.m in Sources */,
+				01A111F61D6DD6AC00131431 /* JYBannerObject.m in Sources */,
+				01A1121A1D6EBFC200131431 /* JYChainObject.m in Sources */,
+				01A112141D6EA76200131431 /* JYProductObject.m in Sources */,
+				01A1120B1D6E9E0400131431 /* JYPushNotificationObject.m in Sources */,
+				01A112271D6ECA1E00131431 /* JYWalletObject.m in Sources */,
+				01A112051D6E8CFD00131431 /* JYStringObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
