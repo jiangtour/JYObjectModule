@@ -9,7 +9,7 @@
 #import "JYProductObject.h"
 
 @implementation JYProductObject
-@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, state, substate, url, title, detail, thumbnail, images, characteristics;
+@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, state, substate, url, title, detail, thumbnail, images, characteristics, categories;
 + (NSArray *)indexedProperties
 {
     NSMutableArray *indexed = [[super indexedProperties] mutableCopy];

@@ -18,6 +18,8 @@ static NSString *const _Nonnull JYResponseTypeObject = @"object";
 /// List type identifier.
 ///
 static NSString *const _Nonnull JYResponseTypeList   = @"list";
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-function"
 /// Get the class name of object type string.
 ///
 static Class _Nullable JYResponseClassWithObjectTypeString(NSString * _Nonnull object) {
@@ -58,6 +60,7 @@ static NSString * _Nonnull JYResponseTypesWithObjectTypeString(NSString *_Nonnul
     
     return [components lastObject];
 }
+#pragma clang diagnostic pop
 @protocol JYResponseObject <NSObject>
 @required
 /// Status code.
