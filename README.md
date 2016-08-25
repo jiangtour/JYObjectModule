@@ -1,4 +1,5 @@
-#酱游科技数据模型协议[![Build Status](https://travis-ci.org/jiangtour/JYObjectModule.svg?branch=master)](https://travis-ci.org/jiangtour/JYObjectModule)[![Version](https://img.shields.io/cocoapods/v/JYObjectModule.svg?style=flat)](http://cocoapods.org/pods/JYObjectModule)[![License](https://img.shields.io/cocoapods/l/JYObjectModule.svg?style=flat)](http://cocoapods.org/pods/JYObjectModule)[![Platform](https://img.shields.io/cocoapods/p/JYObjectModule.svg?style=flat)](http://cocoapods.org/pods/JYObjectModule)## 说明###文档信息管理文档管理信息表
+#酱游科技数据模型协议
+##JYObjectModule[![Build Status](https://travis-ci.org/jiangtour/JYObjectModule.svg?branch=master)](https://travis-ci.org/jiangtour/JYObjectModule)[![Version](https://img.shields.io/cocoapods/v/JYObjectModule.svg?style=flat)](http://cocoapods.org/pods/JYObjectModule)[![License](https://img.shields.io/cocoapods/l/JYObjectModule.svg?style=flat)](http://cocoapods.org/pods/JYObjectModule)[![Platform](https://img.shields.io/cocoapods/p/JYObjectModule.svg?style=flat)](http://cocoapods.org/pods/JYObjectModule)## 说明###文档信息管理文档管理信息表
 > | 组件  | 描述  |
 > |:-------------|:-------------|
 > | 主题 | 酱游科技数据模型接口协议 |
