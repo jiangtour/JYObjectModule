@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Jyobjectmodule by jiangtour</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Jyobjectmodule</h1>
+      <h2 class="project-tagline">Objects modules.</h2>
+      <a href="https://github.com/jiangtour/JYObjectModule" class="btn">View on GitHub</a>
+      <a href="https://github.com/jiangtour/JYObjectModule/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/jiangtour/JYObjectModule/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="酱游科技数据模型协议" class="anchor" href="#%E9%85%B1%E6%B8%B8%E7%A7%91%E6%8A%80%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E5%8D%8F%E8%AE%AE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>酱游科技数据模型协议</h1>
+
+<h2>
+<a id="说明" class="anchor" href="#%E8%AF%B4%E6%98%8E" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h2>
+
+<h3>
+<a id="文档信息管理" class="anchor" href="#%E6%96%87%E6%A1%A3%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>文档信息管理</h3>
+
+<p>文档管理信息表</p>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">组件</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">主题</td>
+<td align="left">酱游科技数据模型接口协议</td>
+</tr>
+<tr>
+<td align="left">版本</td>
+<td align="left">0.1.0</td>
+</tr>
+<tr>
+<td align="left">内容</td>
+<td align="left">数据模型定义</td>
+</tr>
+<tr>
+<td align="left">关键字</td>
+<td align="left">开发、协同、接口，数据字典</td>
+</tr>
+<tr>
+<td align="left">参考文档</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">创建时间</td>
+<td align="left">2016/08/22</td>
+</tr>
+<tr>
+<td align="left">创建人</td>
+<td align="left">酱游科技技术部艾星</td>
+</tr>
+<tr>
+<td align="left">最新发布日期</td>
+<td align="left">2016/08/24</td>
+</tr>
+<tr>
+<td align="left">创建时间</td>
+<td align="left">2016/08/22</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<p>文档变更纪录</p>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">更改人</th>
+<th align="left">日期</th>
+<th align="left">更改内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">技术部艾星</td>
+<td align="left">2016/08/22</td>
+<td align="left">文档创建</td>
+</tr>
+<tr>
+<td align="left">技术部</td>
+<td align="left">2016/08/24</td>
+<td align="left">文档完善</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h3>
+<a id="概述" class="anchor" href="#%E6%A6%82%E8%BF%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>概述</h3>
+
+<p>此文档用于开发前期应用系统所涉及的开发模型的定义，包括字段的定义与命名。</p>
+
+<h3>
+<a id="模型定义" class="anchor" href="#%E6%A8%A1%E5%9E%8B%E5%AE%9A%E4%B9%89" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>模型定义</h3>
+
+<p>模型定义是对每个技术实现细节的规范，相应的模型详见附录，甲方若无特殊要求，App命名空间以JY作为前缀（命名空间），包名统一使用com.jiangyou.jyobjectmodule以规范应用的唯一bundleId。</p>
+
+<h2>
+<a id="模型定义-1" class="anchor" href="#%E6%A8%A1%E5%9E%8B%E5%AE%9A%E4%B9%89-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>模型定义</h2>
+
+<h3>
+<a id="说明-1" class="anchor" href="#%E8%AF%B4%E6%98%8E-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h3>
+
+<p>此模块用于定义通用模块的模型</p>
+
+<h3>
+<a id="操作" class="anchor" href="#%E6%93%8D%E4%BD%9C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>操作</h3>
+
+<p>无</p>
+
+<h3>
+<a id="jyobject" class="anchor" href="#jyobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYObject</h3>
+
+<h4>
+<a id="定义" class="anchor" href="#%E5%AE%9A%E4%B9%89" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">objectId</td>
+<td align="center">对象Id</td>
+<td align="center">string</td>
+<td align="left">服务器分配的唯一对象Id</td>
+</tr>
+<tr>
+<td align="left">userId</td>
+<td align="center">当前用户Id</td>
+<td align="center">string</td>
+<td align="left">当前用户Id</td>
+</tr>
+<tr>
+<td align="left">index</td>
+<td align="center">对象索引</td>
+<td align="center">int</td>
+<td align="left">对象索引值，值小于0是不生效，默认值为-1</td>
+</tr>
+<tr>
+<td align="left">atCreation</td>
+<td align="center">对象创建时间</td>
+<td align="center">long</td>
+<td align="left">对象创建时间</td>
+</tr>
+<tr>
+<td align="left">atUpdation</td>
+<td align="center">对象变更时间</td>
+<td align="center">long</td>
+<td align="left">对象变更时间，值小于0表示不生效，默认值为-1</td>
+</tr>
+<tr>
+<td align="left">descriptions</td>
+<td align="center">附加表述</td>
+<td align="center">string</td>
+<td align="left">附加描述，没有可忽略</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-2" class="anchor" href="#%E8%AF%B4%E6%98%8E-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此实体类抽象表述存在于服务器数据库的模型对象，所有模型都应该继承与这个对象，便于统一、抽象表示所有的模型对象。</p>
+
+<h3>
+<a id="jyimageobject" class="anchor" href="#jyimageobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYImageObject</h3>
+
+<h4>
+<a id="关系" class="anchor" href="#%E5%85%B3%E7%B3%BB" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYImageObject:JYObject</p>
+
+<h4>
+<a id="定义-1" class="anchor" href="#%E5%AE%9A%E4%B9%89-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">url</td>
+<td align="center">图片链接地址</td>
+<td align="center">string</td>
+<td align="left">图片链接地址</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-3" class="anchor" href="#%E8%AF%B4%E6%98%8E-3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此对象用于描述网络图片资源。</p>
+
+<h3>
+<a id="jybannerobject" class="anchor" href="#jybannerobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYBannerObject</h3>
+
+<h4>
+<a id="关系-1" class="anchor" href="#%E5%85%B3%E7%B3%BB-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYBannerObject :JYObject</p>
+
+<h4>
+<a id="定义-2" class="anchor" href="#%E5%AE%9A%E4%B9%89-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">imageURL</td>
+<td align="center">banner的图片</td>
+<td align="center">string</td>
+<td align="left">banner的图片链接</td>
+</tr>
+<tr>
+<td align="left">url</td>
+<td align="center">banner的链接</td>
+<td align="center">string</td>
+<td align="left">banner的链接，用于跳转</td>
+</tr>
+<tr>
+<td align="left">priority</td>
+<td align="center">banner的优先级</td>
+<td align="center">int</td>
+<td align="left">从0开始，表示banner的显示优先级，区别于index：index表示存储索引</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="center">类型</td>
+<td align="center">int</td>
+<td align="left">banner类型，-1表示此字段不生效</td>
+</tr>
+<tr>
+<td align="left">subtype</td>
+<td align="center">子类型</td>
+<td align="center">int</td>
+<td align="left">banner子类型，-1表示此字段不生效</td>
+</tr>
+<tr>
+<td align="left">referenceId</td>
+<td align="center">引用id</td>
+<td align="center">string</td>
+<td align="left">引用App内部资源id</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-4" class="anchor" href="#%E8%AF%B4%E6%98%8E-4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此对象用于描述banner资源。</p>
+
+<h3>
+<a id="jylocationobject" class="anchor" href="#jylocationobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYLocationObject</h3>
+
+<h4>
+<a id="关系-2" class="anchor" href="#%E5%85%B3%E7%B3%BB-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYLocationObject:JYObject</p>
+
+<h4>
+<a id="定义-3" class="anchor" href="#%E5%AE%9A%E4%B9%89-3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">longitude</td>
+<td align="center">经度</td>
+<td align="center">double</td>
+<td align="left">地理位置经度</td>
+</tr>
+<tr>
+<td align="left">latitude</td>
+<td align="center">纬度</td>
+<td align="center">double</td>
+<td align="left">地理位置纬度</td>
+</tr>
+<tr>
+<td align="left">province</td>
+<td align="center">省份</td>
+<td align="center">string</td>
+<td align="left">省份名称</td>
+</tr>
+<tr>
+<td align="left">city</td>
+<td align="center">城市</td>
+<td align="center">string</td>
+<td align="left">城市名称</td>
+</tr>
+<tr>
+<td align="left">district</td>
+<td align="center">区县</td>
+<td align="center">string</td>
+<td align="left">区县名称</td>
+</tr>
+<tr>
+<td align="left">street</td>
+<td align="center">街道</td>
+<td align="center">string</td>
+<td align="left">街道名称</td>
+</tr>
+<tr>
+<td align="left">address</td>
+<td align="center">扩展描述</td>
+<td align="center">string</td>
+<td align="left">详细地址描述</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-5" class="anchor" href="#%E8%AF%B4%E6%98%8E-5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此实体类用于存储地理位置信息。</p>
+
+<h3>
+<a id="jycommentobject" class="anchor" href="#jycommentobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYCommentObject</h3>
+
+<h4>
+<a id="关系-3" class="anchor" href="#%E5%85%B3%E7%B3%BB-3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYCommentObject:JYObject</p>
+
+<h4>
+<a id="定义-4" class="anchor" href="#%E5%AE%9A%E4%B9%89-4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">content</td>
+<td align="center">评论内容</td>
+<td align="center">string</td>
+<td align="left">评论内容</td>
+</tr>
+<tr>
+<td align="left">images</td>
+<td align="center">评论图片</td>
+<td align="center">List&lt;_kind_of_JYImageObject&gt;</td>
+<td align="left">评论图片</td>
+</tr>
+<tr>
+<td align="left">user</td>
+<td align="center">发表评论的用户</td>
+<td align="center">_kind_of_JYUserObject</td>
+<td align="left">发表评论用户实体</td>
+</tr>
+<tr>
+<td align="left">atUser</td>
+<td align="center">被评论评论内容的用户</td>
+<td align="center">_kind_of_JYUserObject</td>
+<td align="left">被评论评论内容的用户</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-6" class="anchor" href="#%E8%AF%B4%E6%98%8E-6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此实体类用于描述评论对象</p>
+
+<h3>
+<a id="jyuserobject" class="anchor" href="#jyuserobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYUserObject</h3>
+
+<h4>
+<a id="关系-4" class="anchor" href="#%E5%85%B3%E7%B3%BB-4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYUserObject:JYObject</p>
+
+<h4>
+<a id="定义-5" class="anchor" href="#%E5%AE%9A%E4%B9%89-5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">avatar</td>
+<td align="center">头像</td>
+<td align="center">string</td>
+<td align="left">图片链接</td>
+</tr>
+<tr>
+<td align="left">nickname</td>
+<td align="center">昵称</td>
+<td align="center">string</td>
+<td align="left">用户昵称，不要使用emoji等字符</td>
+</tr>
+<tr>
+<td align="left">phone</td>
+<td align="center">注册的电话号码</td>
+<td align="center">string</td>
+<td align="left">注册时使用的手机号码</td>
+</tr>
+<tr>
+<td align="left">gender</td>
+<td align="center">性别</td>
+<td align="center">int</td>
+<td align="left">性别，0代表默认，1代表男性，2代表女性</td>
+</tr>
+<tr>
+<td align="left">birthday</td>
+<td align="center">生日</td>
+<td align="center">string</td>
+<td align="left">生日字符串</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-7" class="anchor" href="#%E8%AF%B4%E6%98%8E-7" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>次实体类用于描述用户对象</p>
+
+<h3>
+<a id="jypostobject" class="anchor" href="#jypostobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYPostObject</h3>
+
+<h4>
+<a id="关系-5" class="anchor" href="#%E5%85%B3%E7%B3%BB-5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYPostObject:JYObject</p>
+
+<h4>
+<a id="定义-6" class="anchor" href="#%E5%AE%9A%E4%B9%89-6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">user</td>
+<td align="center">内容产生用户</td>
+<td align="center">_kind_of_JYUserObject</td>
+<td align="left">内容产生用户</td>
+</tr>
+<tr>
+<td align="left">title</td>
+<td align="center">内容标题</td>
+<td align="center">string</td>
+<td align="left">内容标题</td>
+</tr>
+<tr>
+<td align="left">detail</td>
+<td align="center">内容摘要</td>
+<td align="center">string</td>
+<td align="left">内容摘要</td>
+</tr>
+<tr>
+<td align="left">content</td>
+<td align="center">文字内容</td>
+<td align="center">string</td>
+<td align="left">文字内容</td>
+</tr>
+<tr>
+<td align="left">images</td>
+<td align="center">图片内容</td>
+<td align="center">List&lt;_kind_of_JYImageObject&gt;</td>
+<td align="left">图片内容</td>
+</tr>
+<tr>
+<td align="left">readCount</td>
+<td align="center">阅读数量</td>
+<td align="center">int</td>
+<td align="left">帖子阅读数量</td>
+</tr>
+<tr>
+<td align="left">commentCount</td>
+<td align="center">评论数量</td>
+<td align="center">int</td>
+<td align="left">帖子评论数量</td>
+</tr>
+<tr>
+<td align="left">liked</td>
+<td align="center">是否点赞</td>
+<td align="center">boolean</td>
+<td align="left">是否点赞帖子</td>
+</tr>
+<tr>
+<td align="left">likeCount</td>
+<td align="center">点赞数量</td>
+<td align="center">int</td>
+<td align="left">点赞数量</td>
+</tr>
+<tr>
+<td align="left">shareCount</td>
+<td align="center">分享数量</td>
+<td align="center">int</td>
+<td align="left">分享数量</td>
+</tr>
+<tr>
+<td align="left">comments</td>
+<td align="center">评论列表</td>
+<td align="center">List</td>
+<td align="left">评论实体列表，默认3条</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-8" class="anchor" href="#%E8%AF%B4%E6%98%8E-8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此模型应用于所有图文内容相关的对象（帖子、动态等）</p>
+
+<h3>
+<a id="jystringobject" class="anchor" href="#jystringobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYStringObject</h3>
+
+<h4>
+<a id="关系-6" class="anchor" href="#%E5%85%B3%E7%B3%BB-6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYStringObject:JYObject</p>
+
+<h4>
+<a id="定义-7" class="anchor" href="#%E5%AE%9A%E4%B9%89-7" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">storage</td>
+<td align="center">实际string内容</td>
+<td align="center">string</td>
+<td align="left">实际内容</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-9" class="anchor" href="#%E8%AF%B4%E6%98%8E-9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此模型应用于所有需要保存的string对象</p>
+
+<h3>
+<a id="jypushnotificationobject" class="anchor" href="#jypushnotificationobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYPushNotificationObject</h3>
+
+<h4>
+<a id="关系-7" class="anchor" href="#%E5%85%B3%E7%B3%BB-7" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYPushNotificationObject:JYObject</p>
+
+<h4>
+<a id="定义-8" class="anchor" href="#%E5%AE%9A%E4%B9%89-8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">content</td>
+<td align="center">推送内容</td>
+<td align="center">string</td>
+<td align="left">推送内容</td>
+</tr>
+<tr>
+<td align="left">image</td>
+<td align="center">推送图片链接</td>
+<td align="center">string</td>
+<td align="left">推送图片链接</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="center">推送类型</td>
+<td align="center">int</td>
+<td align="left">推送类型</td>
+</tr>
+<tr>
+<td align="left">subtype</td>
+<td align="center">推送子类型</td>
+<td align="center">int</td>
+<td align="left">推送子类型</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-10" class="anchor" href="#%E8%AF%B4%E6%98%8E-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此模型应用于所有推送对象</p>
+
+<h3>
+<a id="jyidentifierobject" class="anchor" href="#jyidentifierobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYIdentifierObject</h3>
+
+<h4>
+<a id="关系-8" class="anchor" href="#%E5%85%B3%E7%B3%BB-8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYIdentifierObject:JYObject</p>
+
+<h4>
+<a id="定义-9" class="anchor" href="#%E5%AE%9A%E4%B9%89-9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">name</td>
+<td align="center">实名名字</td>
+<td align="center">string</td>
+<td align="left">用户真实名字</td>
+</tr>
+<tr>
+<td align="left">identifier</td>
+<td align="center">身份证件编号</td>
+<td align="center">string</td>
+<td align="left">身份证</td>
+</tr>
+<tr>
+<td align="left">phone</td>
+<td align="center">联系方式</td>
+<td align="center">string</td>
+<td align="left">注册时使用的手机号码</td>
+</tr>
+<tr>
+<td align="left">state</td>
+<td align="center">认证状态</td>
+<td align="center">int</td>
+<td align="left">认证状态描述</td>
+</tr>
+<tr>
+<td align="left">substate</td>
+<td align="center">认证子状态</td>
+<td align="center">int</td>
+<td align="left">认证子状态</td>
+</tr>
+<tr>
+<td align="left">statements</td>
+<td align="center">状态描述</td>
+<td align="center">string</td>
+<td align="left">状态描述</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-11" class="anchor" href="#%E8%AF%B4%E6%98%8E-11" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此模型应用于实名认证状态对象描述</p>
+
+<h3>
+<a id="jyorderobject" class="anchor" href="#jyorderobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYOrderObject</h3>
+
+<h4>
+<a id="关系-9" class="anchor" href="#%E5%85%B3%E7%B3%BB-9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYOrderObject:JYObject</p>
+
+<h4>
+<a id="定义-10" class="anchor" href="#%E5%AE%9A%E4%B9%89-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">state</td>
+<td align="center">订单状态</td>
+<td align="center">int</td>
+<td align="left">订单状态</td>
+</tr>
+<tr>
+<td align="left">substate</td>
+<td align="center">订单子状态</td>
+<td align="center">int</td>
+<td align="left">订单子状态</td>
+</tr>
+<tr>
+<td align="left">product</td>
+<td align="center">产品</td>
+<td align="center">_kind_of_JYProductObject</td>
+<td align="left">订单来源产品</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-12" class="anchor" href="#%E8%AF%B4%E6%98%8E-12" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此模型应用于订单对象描述</p>
+
+<h3>
+<a id="jyproductobject" class="anchor" href="#jyproductobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYProductObject</h3>
+
+<h4>
+<a id="关系-10" class="anchor" href="#%E5%85%B3%E7%B3%BB-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYProductObject:JYObject</p>
+
+<h4>
+<a id="定义-11" class="anchor" href="#%E5%AE%9A%E4%B9%89-11" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">title</td>
+<td align="center">产品名称</td>
+<td align="center">string</td>
+<td align="left">产品名称</td>
+</tr>
+<tr>
+<td align="left">detail</td>
+<td align="center">产品详细描述</td>
+<td align="center">string</td>
+<td align="left">产品详细描述</td>
+</tr>
+<tr>
+<td align="left">thumbnail</td>
+<td align="center">封面图链接</td>
+<td align="center">string</td>
+<td align="left">封面图链接</td>
+</tr>
+<tr>
+<td align="left">images</td>
+<td align="center">图片介绍</td>
+<td align="center">List&lt;_kind_of_JYImgaeObject&gt;</td>
+<td align="left">产品图片</td>
+</tr>
+<tr>
+<td align="left">url</td>
+<td align="center">产品介绍链接</td>
+<td align="center">string</td>
+<td align="left">产品介绍H5链接</td>
+</tr>
+<tr>
+<td align="left">state</td>
+<td align="center">产品状态</td>
+<td align="center">int</td>
+<td align="left">产品状态</td>
+</tr>
+<tr>
+<td align="left">substate</td>
+<td align="center">产品子状态</td>
+<td align="center">int</td>
+<td align="left">产品子状态</td>
+</tr>
+<tr>
+<td align="left">characteristics</td>
+<td align="center">产品特性</td>
+<td align="center">List&lt;_kind_of_JYIntegerObject&gt;</td>
+<td align="left">产品特性</td>
+</tr>
+<tr>
+<td align="left">categories</td>
+<td align="center">产品类别</td>
+<td align="center">List&lt;_kind_of_JYProductCategoryObject&gt;</td>
+<td align="left">需要实例化规格的类型</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-13" class="anchor" href="#%E8%AF%B4%E6%98%8E-13" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此模型应用于产品对象描述</p>
+
+<h3>
+<a id="jychainobject" class="anchor" href="#jychainobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYChainObject</h3>
+
+<h4>
+<a id="关系-11" class="anchor" href="#%E5%85%B3%E7%B3%BB-11" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYChainObject:JYObject</p>
+
+<h4>
+<a id="定义-12" class="anchor" href="#%E5%AE%9A%E4%B9%89-12" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">superId</td>
+<td align="center">父节点Id</td>
+<td align="center">string</td>
+<td align="left">父节点id</td>
+</tr>
+<tr>
+<td align="left">title</td>
+<td align="center">对象标题</td>
+<td align="center">string</td>
+<td align="left">对象标题</td>
+</tr>
+<tr>
+<td align="left">detail</td>
+<td align="center">对象详情</td>
+<td align="center">string</td>
+<td align="left">对象详情</td>
+</tr>
+<tr>
+<td align="left">children</td>
+<td align="center">子节点数组</td>
+<td align="center">List&lt;_kind_of_JYChainObject&gt;</td>
+<td align="left">子节点数组</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-14" class="anchor" href="#%E8%AF%B4%E6%98%8E-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此模型应用于链式结构对象</p>
+
+<h3>
+<a id="jyproductcategoryobject" class="anchor" href="#jyproductcategoryobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYProductCategoryObject</h3>
+
+<h4>
+<a id="关系-12" class="anchor" href="#%E5%85%B3%E7%B3%BB-12" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYProductCategoryObject:JYChainObject</p>
+
+<h4>
+<a id="定义-13" class="anchor" href="#%E5%AE%9A%E4%B9%89-13" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-15" class="anchor" href="#%E8%AF%B4%E6%98%8E-15" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此模型应用于产品类别对象描述</p>
+
+<h3>
+<a id="jypageobject" class="anchor" href="#jypageobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYPageObject</h3>
+
+<h4>
+<a id="关系-13" class="anchor" href="#%E5%85%B3%E7%B3%BB-13" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYPageObject</p>
+
+<h4>
+<a id="定义-14" class="anchor" href="#%E5%AE%9A%E4%B9%89-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">index</td>
+<td align="center">当前页码</td>
+<td align="center">int</td>
+<td align="left">当前页码</td>
+</tr>
+<tr>
+<td align="left">pageCount</td>
+<td align="center">每页包含的纪录数</td>
+<td align="center">int</td>
+<td align="left">每页包饭的纪录数</td>
+</tr>
+<tr>
+<td align="left">totalCount</td>
+<td align="center">总数量</td>
+<td align="center">int</td>
+<td align="left">总数量</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-16" class="anchor" href="#%E8%AF%B4%E6%98%8E-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此模型用于描述页码对象。</p>
+
+<h3>
+<a id="jywalletobject" class="anchor" href="#jywalletobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYWalletObject</h3>
+
+<h4>
+<a id="关系-14" class="anchor" href="#%E5%85%B3%E7%B3%BB-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYWalletObject:JYObject</p>
+
+<h4>
+<a id="定义-15" class="anchor" href="#%E5%AE%9A%E4%B9%89-15" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">amount</td>
+<td align="center">钱包余额</td>
+<td align="center">long</td>
+<td align="left">钱包余额精确到分</td>
+</tr>
+<tr>
+<td align="left">withdrawal</td>
+<td align="center">可提现余额</td>
+<td align="center">long</td>
+<td align="left">可提现余额</td>
+</tr>
+<tr>
+<td align="left">blocked</td>
+<td align="center">冻结资金</td>
+<td align="center">long</td>
+<td align="left">冻结资金</td>
+</tr>
+<tr>
+<td align="left">income</td>
+<td align="center">累计收入</td>
+<td align="center">long</td>
+<td align="left">累计收入</td>
+</tr>
+<tr>
+<td align="left">outcome</td>
+<td align="center">累计支出</td>
+<td align="center">long</td>
+<td align="left">累计支出</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-17" class="anchor" href="#%E8%AF%B4%E6%98%8E-17" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此模型用户钱包对象</p>
+
+<h3>
+<a id="jywithdrawalobject" class="anchor" href="#jywithdrawalobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYWithdrawalObject</h3>
+
+<h4>
+<a id="关系-15" class="anchor" href="#%E5%85%B3%E7%B3%BB-15" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYWithdrawalObject:JYObject</p>
+
+<h4>
+<a id="定义-16" class="anchor" href="#%E5%AE%9A%E4%B9%89-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">state</td>
+<td align="center">提现状态</td>
+<td align="center">int</td>
+<td align="left">提现状态，待定义</td>
+</tr>
+<tr>
+<td align="left">substate</td>
+<td align="center">提现子状态</td>
+<td align="center">int</td>
+<td align="left">待定义</td>
+</tr>
+<tr>
+<td align="left">statements</td>
+<td align="center">状态描述</td>
+<td align="center">string</td>
+<td align="left">例如失败原因描述</td>
+</tr>
+<tr>
+<td align="left">account</td>
+<td align="center">提现账户</td>
+<td align="center">string</td>
+<td align="left">支付宝账户</td>
+</tr>
+<tr>
+<td align="left">amount</td>
+<td align="center">提现金额</td>
+<td align="center">double</td>
+<td align="left">提现金额</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-18" class="anchor" href="#%E8%AF%B4%E6%98%8E-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此模型用户钱包提现对象</p>
+
+<h3>
+<a id="jycashbackobject" class="anchor" href="#jycashbackobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYCashbackObject</h3>
+
+<h4>
+<a id="关系-16" class="anchor" href="#%E5%85%B3%E7%B3%BB-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYCashbackObject:JYObject</p>
+
+<h4>
+<a id="定义-17" class="anchor" href="#%E5%AE%9A%E4%B9%89-17" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">user</td>
+<td align="center">贡献用户</td>
+<td align="center">_kind_of_JYUserObject</td>
+<td align="left">贡献用户</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="center">返现类型</td>
+<td align="center">int</td>
+<td align="left">待定义</td>
+</tr>
+<tr>
+<td align="left">subtype</td>
+<td align="center">返现子类型</td>
+<td align="center">int</td>
+<td align="left">待定义</td>
+</tr>
+<tr>
+<td align="left">amount</td>
+<td align="center">返现金额</td>
+<td align="center">double</td>
+<td align="left">返现金额</td>
+</tr>
+<tr>
+<td align="left">statements</td>
+<td align="center">返现描述</td>
+<td align="center">string</td>
+<td align="left">返现描述</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-19" class="anchor" href="#%E8%AF%B4%E6%98%8E-19" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此模型用户钱包返现对象</p>
+
+<h3>
+<a id="jyaddressobject" class="anchor" href="#jyaddressobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYAddressObject</h3>
+
+<h4>
+<a id="关系-17" class="anchor" href="#%E5%85%B3%E7%B3%BB-17" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYAddressObject:JYObject</p>
+
+<h4>
+<a id="定义-18" class="anchor" href="#%E5%AE%9A%E4%B9%89-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-20" class="anchor" href="#%E8%AF%B4%E6%98%8E-20" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此模型用户收货地址对象</p>
+
+<h3>
+<a id="jyintegerobject" class="anchor" href="#jyintegerobject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JYIntegerObject</h3>
+
+<h4>
+<a id="关系-18" class="anchor" href="#%E5%85%B3%E7%B3%BB-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关系</h4>
+
+<p>JYIntegerObject:JYObject</p>
+
+<h4>
+<a id="定义-19" class="anchor" href="#%E5%AE%9A%E4%B9%89-19" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="center">参数含义</th>
+<th align="center">类型</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">integer</td>
+<td align="center">实际int值</td>
+<td align="center">int</td>
+<td align="left">实际int值</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h4>
+<a id="说明-21" class="anchor" href="#%E8%AF%B4%E6%98%8E-21" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>说明</h4>
+
+<p>此模型用于描述int对象</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/jiangtour/JYObjectModule">Jyobjectmodule</a> is maintained by <a href="https://github.com/jiangtour">jiangtour</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
