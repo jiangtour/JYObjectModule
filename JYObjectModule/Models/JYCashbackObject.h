@@ -25,20 +25,34 @@
 
 #import "JYObject.h"
 #import "JYUserObject.h"
-/// Cashback object protocol.
+/*!
+ *  Cashback object protocol.
+ */
 @protocol JYCashbackObject <JYObject>
 @required
-/// User where the cash back from.
+/*!
+ *  User where the cash back from.
+ */
 @property(strong, nonatomic, nonnull) id<JYUserObject> user;
-/// Type of cashback object.
+/*!
+ *  Type of cashback object.
+ */
 @property(assign, nonatomic) int64_t type;
-/// Subtype of cashback object.
+/*!
+ *  Subtype of cashback object.
+ */
 @property(assign, nonatomic) int64_t subtype;
-/// Amount of cashback object.
+/*!
+ *  Amount of cashback object.
+ */
 @property(assign, nonatomic) int64_t amount;
-/// Statements of cash back.
+/*!
+ *  Amount of cashback object.
+ */
 @property(copy, nonatomic, nullable) NSString *statements;
 @end
-/// JYCashbackObject.
+/*!
+ *  JYCashbackObject.
+ */
 @interface JYCashbackObject : RLMObject <JYCashbackObject>
 @end

@@ -24,24 +24,42 @@
 //  SOFTWARE.
 
 #import "JYObject.h"
-/// Reward object protocol.
+/*!
+ *  Reward object protocol.
+ */
 @protocol JYRewardObject <JYObject>
 @required
-/// @description Title of reward object.
+/*!
+ *  Title of reward object.
+ */
 @property(copy, nonatomic, nullable) NSString *title;
-/// @description Detail of reward object.
+/*!
+ *  Detail of reward object.
+ */
 @property(copy, nonatomic, nullable) NSString *detail;
-/// @description Amount of reward object.
+/*!
+ *  Amount of reward object.
+ */
 @property(assign, nonatomic) int64_t amount;
-/// @description Type of reward object.
+/*!
+ *  Type of reward object.
+ */
 @property(assign, nonatomic) int64_t type;
-/// @description Subtype of reward object.
+/*!
+ *  Subtype of reward object.
+ */
 @property(assign, nonatomic) int64_t subtype;
-/// @description State of reward object.
+/*!
+ *  State of reward object.
+ */
 @property(assign, nonatomic) int64_t state;
-/// @description Substate of reward object.
+/*!
+ *  Substate of reward object.
+ */
 @property(assign, nonatomic) int64_t substate;
 @end
-/// JYRewardObject.
+/*!
+ *  JYRewardObject.
+ */
 @interface JYRewardObject : RLMObject <JYRewardObject>
 @end

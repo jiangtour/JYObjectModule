@@ -27,28 +27,50 @@
 #import "JYImageObject.h"
 #import "JYIntegerObject.h"
 #import "JYProductCategoryObject.h"
-/// Product object protocol.
+/*!
+ *  Product object protocol.
+ */
 @protocol JYProductObject <JYObject>
 @required
-/// State of product object.
+/*!
+ *  State of product object.
+ */
 @property(assign, nonatomic) int64_t state;
-/// Substate of product object.
+/*!
+ *  Substate of product object.
+ */
 @property(assign, nonatomic) int64_t substate;
-/// Product detail url of product object.
+/*!
+ *  Product detail url of product object.
+ */
 @property(copy, nonatomic, nullable) NSString *url;
-/// Title of product object.
+/*!
+ *  Title of product object.
+ */
 @property(copy, nonatomic, nullable) NSString *title;
-/// Detail of product object.
+/*!
+ *  Detail of product object.
+ */
 @property(copy, nonatomic, nullable) NSString *detail;
-/// Thumbnail url of product object.
+/*!
+ *  Thumbnail url of product object.
+ */
 @property(copy, nonatomic, nullable) NSString *thumbnail;
-/// Images of product object.
+/*!
+ *  Images of product object.
+ */
 @property(strong, nonatomic, nullable) RLMArray<__kindof JYImageObject *><JYImageObject> *images;
-/// Characteristics of product object.
+/*!
+ *  Characteristics of product object.
+ */
 @property(strong, nonatomic, nullable) RLMArray<__kindof JYIntegerObject *><JYIntegerObject> *characteristics;
-/// Categories of product object.
+/*!
+ *  Categories of product object.
+ */
 @property(strong, nonatomic, nullable) RLMArray<__kindof JYProductCategoryObject *><JYProductCategoryObject> *categories;
 @end
-/// JYProductObject.
+/*!
+ *  JYProductObject.
+ */
 @interface JYProductObject : RLMObject <JYProductObject>
 @end

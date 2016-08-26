@@ -25,16 +25,26 @@
 
 #import "JYObject.h"
 #import "JYProductObject.h"
-/// Order object protocol.
+/*!
+ *  Order object protocol.
+ */
 @protocol JYOrderObject <JYObject>
 @required
-/// State of order.
+/*!
+ *  State of order.
+ */
 @property(assign, nonatomic) int64_t state;
-/// Substate of order.
+/*!
+ *  Substate of order.
+ */
 @property(assign, nonatomic) int64_t substate;
-/// Product object.
+/*!
+ *  Product object.
+ */
 @property(strong, nonatomic, nonnull) id<JYProductObject> product;
 @end
-/// JYOrderObject.
+/*!
+ *  JYOrderObject.
+ */
 @interface JYOrderObject : RLMObject <JYOrderObject>
 @end

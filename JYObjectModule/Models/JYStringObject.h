@@ -24,12 +24,18 @@
 //  SOFTWARE.
 
 #import "JYObject.h"
-/// String object protocol.
+/*!
+ *  String object protocol.
+ */
 @protocol JYStringObject <JYObject>
 @required
-/// Storage of string object.
+/*!
+ *  Storage of string object.
+ */
 @property(copy, nonatomic, nullable) NSString *storage;
 @end
-/// JYStringObject.
+/*!
+ *  JYStringObject.
+ */
 @interface JYStringObject : RLMObject <JYStringObject>
 @end

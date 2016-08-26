@@ -24,10 +24,14 @@
 //  SOFTWARE.
 
 #import "JYChainObject.h"
-/// Product category object protocol.
+/*!
+ *  Product category object protocol.
+ */
 @protocol JYProductCategoryObject <JYChainObject>
 @required
 @end
-/// JYProfuctCategoryObject.
+/*!
+ *  JYProfuctCategoryObject.
+ */
 @interface JYProductCategoryObject : RLMObject <JYProductCategoryObject>
 @end

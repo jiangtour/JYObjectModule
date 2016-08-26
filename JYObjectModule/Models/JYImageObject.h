@@ -24,12 +24,18 @@
 //  SOFTWARE.
 
 #import "JYObject.h"
-/// Image object protocol.
+/*!
+ *  Image object protocol.
+ */
 @protocol JYImageObject <JYObject>
 @required
-/// Url string of remote image resource.
+/*!
+ *  Url string of remote image resource.
+ */
 @property(copy, nonatomic, nonnull) NSString *url;
 @end
-/// JYImageObject.
+/*!
+ *  JYImageObject.
+ */
 @interface JYImageObject : RLMObject <JYImageObject>
 @end

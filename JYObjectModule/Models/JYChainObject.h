@@ -24,23 +24,39 @@
 //  SOFTWARE.
 
 #import "JYObject.h"
-/// JYChainObject protocol.
+/*!
+ *  JYChainObject protocol.
+ */
 @protocol JYChainObject;
-/// JYChainObject.
+/*!
+ *  JYChainObject.
+ */
 @interface JYChainObject : RLMObject
 @end
-/// Chain object protocol.
+/*!
+ *  Chain object protocol.
+ */
 @protocol  JYChainObject  <JYObject>
 @required
-/// Father object id of chain.
+/*!
+ *  Father object id of chain.
+ */
 @property(copy, nonatomic, nullable) NSString *superId;
-/// Title of chain object.
+/*!
+ *  Title of chain object.
+ */
 @property(copy, nonatomic, nullable) NSString *title;
-/// Detail of chain object.
+/*!
+ *  Detail of chain object.
+ */
 @property(copy, nonatomic, nullable) NSString *detail;
-/// Children of chain object.
+/*!
+ *  Children of chain object.
+ */
 @property(strong, nonatomic, nullable) RLMArray<__kindof JYChainObject *><JYChainObject> *children;
 @end
-/// JYChainObject<JYChainObject>
+/*!
+ *  JYChainObject<JYChainObject>
+ */
 @interface JYChainObject () <JYChainObject>
 @end

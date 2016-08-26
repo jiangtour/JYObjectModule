@@ -24,9 +24,13 @@
 //  SOFTWARE.
 
 #import <Foundation/Foundation.h>
-
+/*!
+ *  Null object protocol.
+ */
 @protocol JYNullObject <NSObject>
 @end
-
+/*!
+ *  JYNullObject.
+ */
 @interface JYNullObject : NSObject <JYNullObject>
 @end

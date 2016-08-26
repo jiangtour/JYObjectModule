@@ -24,24 +24,42 @@
 //  SOFTWARE.
 
 #import "JYObject.h"
-/// Location object protocol.
+/*!
+ *  Location object protocol.
+ */
 @protocol JYLocationObject <JYObject>
 @required
-/// Longitude of location.
+/*!
+ *  Longitude of location.
+ */
 @property(assign, nonatomic) double longitude;
-/// Latitude of location.
+/*!
+ *  Latitude of location.
+ */
 @property(assign, nonatomic) double latitude;
-/// Province name.
+/*!
+ *  Province name.
+ */
 @property(copy, nonatomic, nullable) NSString *province;
-/// City name.
+/*!
+ *  City name.
+ */
 @property(copy, nonatomic, nullable) NSString *city;
-/// District name.
+/*!
+ *  District name.
+ */
 @property(copy, nonatomic, nullable) NSString *district;
-/// Street name.
+/*!
+ *  Street name.
+ */
 @property(copy, nonatomic, nullable) NSString *street;
-/// Address discription.
+/*!
+ *  Address discription.
+ */
 @property(copy, nonatomic, nullable) NSString *address;
 @end
-/// JYLocationObject.
+/*!
+ *  JYLocationObject.
+ */
 @interface JYLocationObject : RLMObject <JYLocationObject>
 @end

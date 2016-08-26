@@ -24,18 +24,30 @@
 //  SOFTWARE.
 
 #import "JYObject.h"
-/// Charge object protocol.
+/*!
+ *  Charge object protocol.
+ */
 @protocol JYChargeObject <JYObject>
 @required
-/// Amount of charge object.
+/*!
+ *  Amount of charge object.
+ */
 @property(assign, nonatomic) int64_t amount;
-/// Type of charge object.
+/*!
+ *  Type of charge object.
+ */
 @property(assign, nonatomic) int64_t type;
-/// Subtype of charge object.
+/*!
+ *  Subtype of charge object.
+ */
 @property(assign, nonatomic) int64_t subtype;
-/// Channel of charge object.
+/*!
+ *  Channel of charge object.
+ */
 @property(assign, nonatomic) int64_t channel;
 @end
-/// JYChargeObject.
+/*!
+ *  JYChargeObject.
+ */
 @interface JYChargeObject : RLMObject <JYChargeObject>
 @end

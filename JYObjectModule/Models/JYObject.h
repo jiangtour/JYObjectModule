@@ -25,22 +25,38 @@
 
 #import <Foundation/Foundation.h>
 #import <Realm/Realm.h>
-/// Basic object protocol of JYObjectModule.
+/*!
+ *  Basic object protocol of JYObjectModule.
+ */
 @protocol JYObject <NSObject>
 @required
-/// Object id of instance from server.
+/*!
+ *  Object id of instance from server.
+ */
 @property(copy, nonatomic, nonnull) NSString *objectId;
-/// User id of current logined user.
+/*!
+ *  User id of current logined user.
+ */
 @property(copy, nonatomic, nullable) NSString *userId;
-/// Index of object.
+/*!
+ *  Index of object.
+ */
 @property(assign, nonatomic) int64_t index;
-/// Time stack of creation time of object.
+/*!
+ *  Time stack of creation time of object.
+ */
 @property(assign, nonatomic) int64_t atCreation;
-/// Time stack of updation time of object.
+/*!
+ *  Time stack of updation time of object.
+ */
 @property(assign, nonatomic) int64_t atUpdation;
-/// Descriptions of object.
+/*!
+ *  Descriptions of object.
+ */
 @property(copy, nonatomic, nullable) NSString *descriptions;
 @end
-/// JYObject.
+/*!
+ *  JYObject.
+ */
 @interface JYObject : RLMObject <JYObject>
 @end

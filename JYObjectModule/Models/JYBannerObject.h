@@ -24,22 +24,38 @@
 //  SOFTWARE.
 
 #import "JYObject.h"
-/// Banner object protocol.
+/*!
+ *  Banner object protocol.
+ */
 @protocol JYBannerObject <JYObject>
 @required
-/// Post image url of banner object.
+/*!
+ *  Post image url of banner object.
+ */
 @property(copy, nonatomic, nonnull) NSString *imageURL;
-/// Url address of banner object.
+/*!
+ *  Url address of banner object.
+ */
 @property(copy, nonatomic, nullable) NSString *url;
-/// Priority of banner object shows at client.
+/*!
+ *  Priority of banner object shows at client.
+ */
 @property(assign, nonatomic) int64_t priority;
-/// Type of banner object.
+/*!
+ *  Type of banner object.
+ */
 @property(assign, nonatomic) int64_t type;
-/// Subtype of banner object.
+/*!
+ *  Subtype of banner object.
+ */
 @property(assign, nonatomic) int64_t subtype;
-/// Refrenced object id of banner object.
+/*!
+ *  Refrenced object id of banner object.
+ */
 @property(copy, nonatomic, nullable) NSString *referenceId;
 @end
-/// JYBannerObject.
+/*!
+ *  JYBannerObject.
+ */
 @interface JYBannerObject : RLMObject <JYBannerObject>
 @end

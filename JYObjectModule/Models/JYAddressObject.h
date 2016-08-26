@@ -25,21 +25,34 @@
 
 #import "JYObject.h"
 #import "JYLocationObject.h"
-/// Address object protocol.
+/*!
+ *  Address object protocol.
+ */
 @protocol JYAddressObject <JYObject>
 @required
-/// Name of user to receive the goods.
+/*!
+ *  Name of user to receive the goods.
+ */
 @property(copy, nonatomic, nonnull) NSString *name;
-/// Phone of user.
+/*!
+ *  Phone of user.
+ */
 @property(copy, nonatomic, nonnull) NSString *phone;
-/// Is degault address.
+/*!
+ *  Is degault address.
+ */
 @property(assign, nonatomic) BOOL defaulted;
-/// Location info of address object.
+/*!
+ *  Location info of address object.
+ */
 @property(strong, nonatomic, nonnull) id<JYLocationObject> location;
 @end
-/// JYAddressObject.
+/*!
+ *  JYAddressObject.
+ */
 @interface JYAddressObject : RLMObject <JYAddressObject>
-/// Location info of address object.
-///
+/*!
+ *  Location info of address object.
+ */
 @property(strong, nonatomic, nonnull) __kindof JYLocationObject *location;
 @end

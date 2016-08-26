@@ -29,19 +29,27 @@
  Object types for response object.
  */
 //
-/// Object type identifier.
-///
+/*!
+ *  Object type identifier.
+ */
 static NSString *const _Nonnull JYResponseTypeObject = @"object";
-/// List type identifier.
-///
+/*!
+ *  List type identifier.
+ */
 static NSString *const _Nonnull JYResponseTypeList   = @"list";
-/// Null type identifier.
-///
+/*!
+ *  Null type identifier.
+ */
 static NSString *const _Nonnull JYResponseTypeNull   = @"null";
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-function"
-/// Get the class name of object type string.
-///
+/*!
+ *  Get the class name of object type string.
+ *
+ *  @param object object type string.
+ *
+ *  @return Object type class.
+ */
 static Class _Nullable JYResponseClassWithObjectTypeString(NSString * _Nonnull object) {
     // Get the components of object type string.
     NSArray *components = [object componentsSeparatedByString:@"/"];
@@ -56,8 +64,13 @@ static Class _Nullable JYResponseClassWithObjectTypeString(NSString * _Nonnull o
     
     return [classComponents lastObject];
 }
-/// Get the web module of response.
-///
+/*!
+ *  Get the web module of response.
+ *
+ *  @param object object object type string.
+ *
+ *  @return Object web module.
+ */
 static NSString * _Nonnull JYResponseWebModuleWithObjectTypeString(NSString *_Nonnull object) {
     // Get the components of object type string.
     NSArray *components = [object componentsSeparatedByString:@"/"];
@@ -68,8 +81,13 @@ static NSString * _Nonnull JYResponseWebModuleWithObjectTypeString(NSString *_No
     
     return [components firstObject];
 }
-/// Get the web module of response.
-///
+/*!
+ *  Get the web module of response.
+ *
+ *  @param object object object object type string.
+ *
+ *  @return Object type.
+ */
 static NSString * _Nonnull JYResponseTypesWithObjectTypeString(NSString *_Nonnull object) {
     // Get the components of object type string.
     NSArray *components = [object componentsSeparatedByString:@"/"];
@@ -83,24 +101,33 @@ static NSString * _Nonnull JYResponseTypesWithObjectTypeString(NSString *_Nonnul
 #pragma clang diagnostic pop
 @protocol JYResponseObject <NSObject>
 @required
-/// Status code.
-///
+/*!
+ *  Status code.
+ */
 @property(assign, nonatomic) int64_t code;
-/// Status info message.
-///
+/*!
+ *  Status info message.
+ */
 @property(copy, nonatomic, nullable) NSString *message;
-/// Data object type string of response object.
-///
+/*!
+ *  Data object type string of response object.
+ */
 @property(copy, nonatomic, nonnull) NSString  *object;
-/// Page info for list objects.
-///
+/*!
+ *  Page info for list objects.
+ */
 @property(strong, nonatomic, nullable) id<JYPageObject> page;
-/// Data for response.
-///
+/*!
+ *  Data for response.
+ */
 @property(strong, nonatomic, nullable) id/*data:{string/dictionary}*/data;
 @end
-
+/*!
+ *  JYResponseObject.
+ */
 @interface JYResponseObject : NSObject <JYResponseObject>
-/// Page info.
+/*!
+ *  Page info.
+ */
 @property(strong, nonatomic, nullable) __kindof JYPageObject *page;
 @end

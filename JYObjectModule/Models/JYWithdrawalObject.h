@@ -24,20 +24,34 @@
 //  SOFTWARE.
 
 #import "JYObject.h"
-/// Withdrawal object protocol.
+/*!
+ *  Withdrawal object protocol.
+ */
 @protocol JYWithdrawalObject <JYObject>
 @required
-/// Amount of withdrawal.
+/*!
+ *  Amount of withdrawal.
+ */
 @property(assign, nonatomic) int64_t amount;
-/// State of withdrawal object.
+/*!
+ *  State of withdrawal object.
+ */
 @property(assign, nonatomic) int64_t state;
-/// Substate of withdrawal object.
+/*!
+ *  Substate of withdrawal object.
+ */
 @property(assign, nonatomic) int64_t substate;
-/// Statements of withdrawal.
+/*!
+ *  Statements of withdrawal.
+ */
 @property(copy, nonatomic, nullable) NSString *statements;
-/// Account of withdrawal.
+/*!
+ *  Account of withdrawal.
+ */
 @property(copy, nonatomic, nullable) NSString *account;
 @end
-/// JYWithdrawalObject.
+/*!
+ *  Account of withdrawal.
+ */
 @interface JYWithdrawalObject : RLMObject <JYWithdrawalObject>
 @end

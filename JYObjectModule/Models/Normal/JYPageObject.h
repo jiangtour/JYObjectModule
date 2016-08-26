@@ -24,19 +24,26 @@
 //  SOFTWARE.
 
 #import <Foundation/Foundation.h>
-
+/*!
+ *  Page object protocol.
+ */
 @protocol JYPageObject <NSObject>
 @required
-/// Index of current page.
-///
+/*!
+ *  Index of current page.
+ */
 @property(assign, nonatomic) int64_t index;
-/// Count of items per page.
-///
+/*!
+ *  Count of items per page.
+ */
 @property(assign, nonatomic) int64_t pageCount;
-/// Total count of all object in the pages.
-///
+/*!
+ *  Total count of all object in the pages.
+ */
 @property(assign, nonatomic) int64_t totalCount;
 @end
-
+/*!
+ *  JYPageObject.
+ */
 @interface JYPageObject : NSObject <JYPageObject>
 @end

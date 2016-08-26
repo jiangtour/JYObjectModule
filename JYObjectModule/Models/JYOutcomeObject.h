@@ -24,9 +24,13 @@
 //  SOFTWARE.
 
 #import "JYChargeObject.h"
-/// Outcome object protocol.
+/*!
+ *  Outcome object protocol.
+ */
 @protocol JYOutcomeObject <JYChargeObject>
 @end
-/// JYOutcomeObject.
+/*!
+ *  JYOutcomeObject.
+ */
 @interface JYOutcomeObject : RLMObject <JYOutcomeObject>
 @end

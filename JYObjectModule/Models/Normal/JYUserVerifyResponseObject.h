@@ -24,14 +24,22 @@
 //  SOFTWARE.
 
 #import <Foundation/Foundation.h>
-/// Verifying response object.
+/*!
+ *  Verifying response object.
+ */
 @protocol JYUserVerifyResponseObject <NSObject>
 @required
-/// User id of the response object from server.
+/*!
+ *  User id of the response object from server.
+ */
 @property(copy, nonatomic, nonnull) NSString *userId;
-/// Token of user.
+/*!
+ *  Token of user.
+ */
 @property(copy, nonatomic, nonnull) NSString *token;
 @end
-/// Class instance of verifying response object protocol.
+/*!
+ *  Class instance of verifying response object protocol.
+ */
 @interface JYUserVerifyResponseObject : NSObject <JYUserVerifyResponseObject>
 @end

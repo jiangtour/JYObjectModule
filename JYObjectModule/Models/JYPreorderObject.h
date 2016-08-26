@@ -24,9 +24,13 @@
 //  SOFTWARE.
 
 #import "JYOrderObject.h"
-/// Preorder object protocol.
+/*!
+ *  Preorder object protocol.
+ */
 @protocol JYPreorderObject <JYOrderObject>
 @end
-/// JYPreorderObject.
+/*!
+ *  JYPreorderObject.
+ */
 @interface JYPreorderObject : RLMObject <JYPreorderObject>
 @end

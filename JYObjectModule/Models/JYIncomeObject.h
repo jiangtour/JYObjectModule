@@ -24,9 +24,13 @@
 //  SOFTWARE.
 
 #import "JYChargeObject.h"
-/// Income object protocol.
+/*!
+ *  Income object protocol.
+ */
 @protocol JYIncomeObject <JYChargeObject>
 @end
-/// JYIncomeObject.
+/*!
+ *  JYIncomeObject.
+ */
 @interface JYIncomeObject : RLMObject <JYIncomeObject>
 @end
