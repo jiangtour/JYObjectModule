@@ -112,6 +112,7 @@
 		01A1122C1D6ECD3C00131431 /* JYCashbackObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCashbackObject.m; sourceTree = "<group>"; };
 		01A1122E1D6ED53C00131431 /* JYResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYResponseObject.h; sourceTree = "<group>"; };
 		01A1122F1D6ED53C00131431 /* JYResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYResponseObject.m; sourceTree = "<group>"; };
+		01A112311D6FD9B900131431 /* JYObjectModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYObjectModule.h; sourceTree = "<group>"; };
 		60CC7FE29AC188273B1DD6F0 /* Pods-JYObjectModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYObjectModule.release.xcconfig"; path = "Pods/Target Support Files/Pods-JYObjectModule/Pods-JYObjectModule.release.xcconfig"; sourceTree = "<group>"; };
 		BD7ADAD0C974A780565ACC78 /* Pods-JYObjectModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYObjectModule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JYObjectModule/Pods-JYObjectModule.debug.xcconfig"; sourceTree = "<group>"; };
 		BF76E61B47DFF0171C2DC70F /* libPods-JYObjectModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JYObjectModule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,6 +212,7 @@
 		01A111ED1D6DD52700131431 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				01A112311D6FD9B900131431 /* JYObjectModule.h */,
 				01A112211D6EC94700131431 /* Normal */,
 				01A111EE1D6DD52700131431 /* JYObject.h */,
 				01A111EF1D6DD52700131431 /* JYObject.m */,

@@ -139,6 +139,11 @@
 > | statements | 返现描述 | string | 返现描述 |
 ####说明此模型用户钱包返现对象###JYAddressObject####关系JYAddressObject:JYObject####定义> | 参数名 | 参数含义 | 类型 | 备注 |
 > |:-------------|:-------------:|:-------------:|:---------------|
-> |  |  |  |  |####说明此模型用户收货地址对象### JYIntegerObject####关系JYIntegerObject:JYObject####定义> | 参数名 | 参数含义 | 类型 | 备注 |
+> | name | 收货人姓名 | string | 收货人姓名 |
+> | phone | 联系电话 | string | 联系电话 |
+> | defaulted | 是否是默认地址 | boolean | 是否是默认收货地址 |
+> | location | 地址信息 | _kind_of_JYLocationObject | 地址信息 |
+
+####说明此模型用户收货地址对象### JYIntegerObject####关系JYIntegerObject:JYObject####定义> | 参数名 | 参数含义 | 类型 | 备注 |
 > |:-------------|:-------------:|:-------------:|:---------------|
 > | integer | 实际int值 | int | 实际int值 |####说明此模型用于描述int对象

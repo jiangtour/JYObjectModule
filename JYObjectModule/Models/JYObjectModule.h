@@ -1,8 +1,8 @@
 //
-//  JYChainObject.m
+//  JYObjectModule.h
 //  JYObjectModule
 //
-//  Created by devedbox on 16/8/25.
+//  Created by devedbox on 16/8/26.
 //  Copyright © 2016年 jiangyou. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,34 +23,26 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import "JYChainObject.h"
+#ifndef JYObjectModule_h
+#define JYObjectModule_h
 
-@implementation JYChainObject
-@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, superId, title, detail, children;
-#pragma mark - Realm support
-+ (NSArray *)indexedProperties
-{
-    NSMutableArray *indexed = [[super indexedProperties] mutableCopy];
-    [indexed addObject:@"superId"];
-    return indexed;
-}
-+ (nullable NSDictionary *)defaultPropertyValues
-{
-    NSMutableDictionary *defaults = [[super defaultPropertyValues] mutableCopy];
-    return defaults;
-}
-+ (nullable NSString *)primaryKey
-{
-    return [super primaryKey];
-}
-+ (nullable NSArray *)ignoredProperties
-{
-    NSMutableArray *ignored = [[super ignoredProperties] mutableCopy];
-    return ignored;
-}
-+ (NSArray *)requiredProperties
-{
-    NSMutableArray *required = [[super requiredProperties] mutableCopy];
-    return required;
-}
-@end
+#import "JYObject.h"
+#import "JYPostObject.h"
+#import "JYUserObject.h"
+#import "JYOrderObject.h"
+#import "JYChainObject.h"
+#import "JYImageObject.h"
+#import "JYWalletObject.h"
+#import "JYStringObject.h"
+#import "JYBannerObject.h"
+#import "JYIntegerObject.h"
+#import "JYProductObject.h"
+#import "JYCommentObject.h"
+#import "JYLocationObject.h"
+#import "JYCashbackObject.h"
+#import "JYIdentifierObject.h"
+#import "JYWithdrawalObject.h"
+#import "JYProductCategoryObject.h"
+#import "JYPushNotificationObject.h"
+
+#endif /* JYObjectModule_h */
