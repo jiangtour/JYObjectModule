@@ -1,8 +1,8 @@
 //
-//  JYCashbackObject.m
+//  JYPreorderObject.h
 //  JYObjectModule
 //
-//  Created by devedbox on 16/8/25.
+//  Created by devedbox on 16/8/26.
 //  Copyright © 2016年 jiangyou. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,29 +23,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import "JYCashbackObject.h"
-
-@implementation JYCashbackObject
-@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, user, type, subtype, amount, statements;
-#pragma mark - Realm support
-+ (NSArray *)indexedProperties
-{
-    return @[@"index", @"atUpdation", @"atCreation", @"descriptions"];
-}
-+ (nullable NSDictionary *)defaultPropertyValues
-{
-    return @{@"index":@(-1)};
-}
-+ (nullable NSString *)primaryKey
-{
-    return @"objectId";
-}
-+ (nullable NSArray *)ignoredProperties
-{
-    return nil;
-}
-+ (NSArray *)requiredProperties
-{
-    return @[@"objectId"];
-}
+#import "JYOrderObject.h"
+/// Preorder object protocol.
+@protocol JYPreorderObject <JYOrderObject>
+@end
+/// JYPreorderObject.
+@interface JYPreorderObject : RLMObject <JYPreorderObject>
 @end

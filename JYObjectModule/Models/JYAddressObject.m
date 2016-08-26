@@ -30,28 +30,22 @@
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {
-    NSMutableArray *indexed = [[super indexedProperties] mutableCopy];
-    [indexed addObjectsFromArray:@[@"phone"]];
-    return indexed;
+    return @[@"index", @"atUpdation", @"atCreation", @"descriptions", @"phone"];
 }
 + (nullable NSDictionary *)defaultPropertyValues
 {
-    NSMutableDictionary *defaults = [[super defaultPropertyValues] mutableCopy];
-    return defaults;
+    return @{@"index":@(-1)};
 }
 + (nullable NSString *)primaryKey
 {
-    return [super primaryKey];
+    return @"objectId";
 }
 + (nullable NSArray *)ignoredProperties
 {
-    NSMutableArray *ignored = [[super ignoredProperties] mutableCopy];
-    return ignored;
+    return nil;
 }
 + (NSArray *)requiredProperties
 {
-    NSMutableArray *required = [[super requiredProperties] mutableCopy];
-    [required addObjectsFromArray:@[@"name", @"phone", @"location"]];
-    return required;
+    return @[@"objectId", @"name", @"phone", @"location"];
 }
 @end

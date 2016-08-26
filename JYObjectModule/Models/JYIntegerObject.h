@@ -24,13 +24,12 @@
 //  SOFTWARE.
 
 #import "JYObject.h"
-
+/// Integer object protocol.
 @protocol JYIntegerObject <JYObject>
 @required
 /// Integer value of integer object.
-///
 @property(assign, nonatomic) int64_t integer;
 @end
-
+/// JYIntegerObject.
 @interface JYIntegerObject : RLMObject <JYIntegerObject>
 @end

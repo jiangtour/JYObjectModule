@@ -26,28 +26,22 @@
 #import "JYObject.h"
 #import "JYUserObject.h"
 #import "JYImageObject.h"
-
+/// Comment object protocol.
 @protocol JYCommentObject <JYObject>
 @required
 /// Content of comment.
-///
 @property(copy, nonatomic, nonnull) NSString *content;
 /// Commenting user of comment.
-///
 @property(strong, nonatomic, nonnull) id<JYUserObject> user;
 /// Commented user of comment.
-///
 @property(strong, nonatomic, nullable) id<JYUserObject> atUser;
 /// Images of comment.
-///
 @property(strong, nonatomic, nullable) RLMArray<__kindof JYImageObject *><JYImageObject> *images;
 @end
-
+/// JYCommentObject.
 @interface JYCommentObject : RLMObject <JYCommentObject>
 /// Commenting user of comment.
-///
 @property(strong, nonatomic, nonnull) __kindof JYUserObject *user;
 /// Commented user of comment.
-///
 @property(strong, nonatomic, nullable) __kindof JYUserObject *atUser;
 @end

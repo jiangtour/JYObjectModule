@@ -27,29 +27,25 @@
 
 @implementation JYIntegerObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, integer;
+#pragma mark - Realm support
 + (NSArray *)indexedProperties
 {
-    NSMutableArray *indexed = [[super indexedProperties] mutableCopy];
-    [indexed addObjectsFromArray:@[@"integer"]];
-    return indexed;
+    return @[@"index", @"atUpdation", @"atCreation", @"descriptions", @"integer"];
 }
 + (nullable NSDictionary *)defaultPropertyValues
 {
-    NSMutableDictionary *defaults = [[super defaultPropertyValues] mutableCopy];
-    return defaults;
+    return @{@"index":@(-1)};
 }
 + (nullable NSString *)primaryKey
 {
-    return [super primaryKey];
+    return @"objectId";
 }
 + (nullable NSArray *)ignoredProperties
 {
-    NSMutableArray *ignored = [[super ignoredProperties] mutableCopy];
-    return ignored;
+    return nil;
 }
 + (NSArray *)requiredProperties
 {
-    NSMutableArray *required = [[super requiredProperties] mutableCopy];
-    return required;
+    return @[@"objectId"];
 }
 @end

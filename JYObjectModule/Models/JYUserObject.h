@@ -24,27 +24,21 @@
 //  SOFTWARE.
 
 #import "JYObject.h"
-
+/// User object protocol.
 @protocol JYUserObject <JYObject>
 @required
 /// Avatar url string of user.
-///
 @property(copy, nonatomic, nullable) NSString *avatar;
 /// Nickname of user.
-///
 @property(copy, nonatomic, nullable) NSString *nickname;
 /// Phone number of user.
-///
 @property(copy, nonatomic, nullable) NSString *phone;
 /// Gender of user.
-///
 @property(assign, nonatomic) int64_t gender;
 /// Birthday of user.
-///
 @property(copy, nonatomic, nullable) NSString *birthday;
 @end
 /// Gender definition of JYUserObject.
-///
 typedef NS_ENUM(int64_t, JYUserGender) {
     /// Not setting.
     JYUserGenderNone,
@@ -53,6 +47,6 @@ typedef NS_ENUM(int64_t, JYUserGender) {
     /// Female.
     JYUserGenderFemale
 };
-
+/// JYUserObject.
 @interface JYUserObject : RLMObject <JYUserObject>
 @end
