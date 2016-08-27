@@ -27,6 +27,11 @@
 
 @implementation JYProductCategoryObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, superId, title, detail, children;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

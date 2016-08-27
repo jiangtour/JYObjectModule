@@ -80,7 +80,7 @@
 /*!
  *  JYPostObject.
  */
-@interface JYPostObject : RLMObject <JYPostObject>
+@interface JYPostObject : JYRLMObject <JYPostObject>
 /*!
  *  User who post the content.
  */

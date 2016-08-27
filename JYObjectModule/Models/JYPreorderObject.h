@@ -32,5 +32,9 @@
 /*!
  *  JYPreorderObject.
  */
-@interface JYPreorderObject : RLMObject <JYPreorderObject>
+@interface JYPreorderObject : JYRLMObject <JYPreorderObject>
+/*!
+ *  Product object.
+ */
+@property(strong, nonatomic, nonnull) __kindof JYProductObject *product;
 @end

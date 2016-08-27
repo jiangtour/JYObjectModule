@@ -1,16 +1,9 @@
 //
-//  JYIncomeObject.h
+//  JYRLMObject.h
 //  JYObjectModule
 //
-//  Created by devedbox on 16/8/26.
+//  Created by devedbox on 16/8/27.
 //  Copyright © 2016年 jiangyou. All rights reserved.
-//
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
 //
 //  The above copyright notice and this permission notice shall be included in all
 //  copies or substantial portions of the Software.
@@ -23,14 +16,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import "JYChargeObject.h"
-/*!
- *  Income object protocol.
- */
-@protocol JYIncomeObject <JYChargeObject>
-@end
-/*!
- *  JYIncomeObject.
- */
-@interface JYIncomeObject : JYRLMObject <JYIncomeObject>
+#import <Foundation/Foundation.h>
+#import <Realm/Realm.h>
+#import <objc/runtime.h>
+
+@interface JYRLMObject : RLMObject
 @end

@@ -27,6 +27,11 @@
 
 @implementation JYWithdrawalObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, amount, state, substate, statements, account;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

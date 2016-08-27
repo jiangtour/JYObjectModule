@@ -32,5 +32,5 @@
 /*!
  *  JYOutcomeObject.
  */
-@interface JYOutcomeObject : RLMObject <JYOutcomeObject>
+@interface JYOutcomeObject : JYRLMObject <JYOutcomeObject>
 @end

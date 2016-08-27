@@ -37,5 +37,5 @@
 /*!
  *  JYIntegerObject.
  */
-@interface JYIntegerObject : RLMObject <JYIntegerObject>
+@interface JYIntegerObject : JYRLMObject <JYIntegerObject>
 @end

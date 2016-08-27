@@ -27,6 +27,11 @@
 
 @implementation JYBannerObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, imageURL, url, priority, type, subtype, referenceId;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

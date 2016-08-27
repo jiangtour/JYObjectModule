@@ -51,7 +51,7 @@
 /*!
  *  JYCommentObject.
  */
-@interface JYCommentObject : RLMObject <JYCommentObject>
+@interface JYCommentObject : JYRLMObject <JYCommentObject>
 /*!
  *  Commenting user of comment.
  */

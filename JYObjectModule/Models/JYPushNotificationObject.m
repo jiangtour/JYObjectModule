@@ -27,6 +27,11 @@
 
 @implementation JYPushNotificationObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, type, subtype, content, image;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

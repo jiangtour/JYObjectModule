@@ -50,5 +50,5 @@
 /*!
  *  JYPushNotificationObject.
  */
-@interface JYPushNotificationObject : RLMObject <JYPushNotificationObject>
+@interface JYPushNotificationObject : JYRLMObject <JYPushNotificationObject>
 @end

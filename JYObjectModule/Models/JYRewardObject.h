@@ -61,5 +61,5 @@
 /*!
  *  JYRewardObject.
  */
-@interface JYRewardObject : RLMObject <JYRewardObject>
+@interface JYRewardObject : JYRLMObject <JYRewardObject>
 @end

@@ -31,7 +31,7 @@
 /*!
  *  JYChainObject.
  */
-@interface JYChainObject : RLMObject
+@interface JYChainObject : JYRLMObject
 @end
 /*!
  *  Chain object protocol.

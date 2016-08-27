@@ -27,6 +27,11 @@
 
 @implementation JYCommentObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, content, images, user, atUser;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

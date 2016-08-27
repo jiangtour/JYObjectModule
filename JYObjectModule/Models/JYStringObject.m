@@ -27,6 +27,11 @@
 
 @implementation JYStringObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, storage;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

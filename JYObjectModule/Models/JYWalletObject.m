@@ -27,6 +27,11 @@
 
 @implementation JYWalletObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, amount, withdrawal, blocked, income, outcome;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

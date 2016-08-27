@@ -57,5 +57,5 @@
 /*!
  *  JYBannerObject.
  */
-@interface JYBannerObject : RLMObject <JYBannerObject>
+@interface JYBannerObject : JYRLMObject <JYBannerObject>
 @end

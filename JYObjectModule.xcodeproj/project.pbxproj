@@ -43,6 +43,9 @@
 		01A112431D70921400131431 /* JYChargeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112421D70921400131431 /* JYChargeObject.m */; };
 		01A112461D70932200131431 /* JYIncomeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112451D70932200131431 /* JYIncomeObject.m */; };
 		01A112491D7093B500131431 /* JYOutcomeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112481D7093B500131431 /* JYOutcomeObject.m */; };
+		01A112541D7115AA00131431 /* PostObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112511D7115AA00131431 /* PostObject.m */; };
+		01A112551D7115AA00131431 /* UserObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112531D7115AA00131431 /* UserObject.m */; };
+		01A112581D712A8500131431 /* JYRLMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112571D712A8500131431 /* JYRLMObject.m */; };
 		26E28937F087F5FF16E2F54D /* libPods-JYObjectModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF76E61B47DFF0171C2DC70F /* libPods-JYObjectModule.a */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +140,12 @@
 		01A112451D70932200131431 /* JYIncomeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYIncomeObject.m; sourceTree = "<group>"; };
 		01A112471D7093B500131431 /* JYOutcomeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYOutcomeObject.h; sourceTree = "<group>"; };
 		01A112481D7093B500131431 /* JYOutcomeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYOutcomeObject.m; sourceTree = "<group>"; };
+		01A112501D7115AA00131431 /* PostObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostObject.h; sourceTree = "<group>"; };
+		01A112511D7115AA00131431 /* PostObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostObject.m; sourceTree = "<group>"; };
+		01A112521D7115AA00131431 /* UserObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserObject.h; sourceTree = "<group>"; };
+		01A112531D7115AA00131431 /* UserObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserObject.m; sourceTree = "<group>"; };
+		01A112561D712A8500131431 /* JYRLMObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYRLMObject.h; sourceTree = "<group>"; };
+		01A112571D712A8500131431 /* JYRLMObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYRLMObject.m; sourceTree = "<group>"; };
 		60CC7FE29AC188273B1DD6F0 /* Pods-JYObjectModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYObjectModule.release.xcconfig"; path = "Pods/Target Support Files/Pods-JYObjectModule/Pods-JYObjectModule.release.xcconfig"; sourceTree = "<group>"; };
 		BD7ADAD0C974A780565ACC78 /* Pods-JYObjectModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYObjectModule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JYObjectModule/Pods-JYObjectModule.debug.xcconfig"; sourceTree = "<group>"; };
 		BF76E61B47DFF0171C2DC70F /* libPods-JYObjectModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JYObjectModule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +206,10 @@
 				013423831D6C4B6700799E34 /* AppDelegate.m */,
 				013423851D6C4B6700799E34 /* ViewController.h */,
 				013423861D6C4B6700799E34 /* ViewController.m */,
+				01A112501D7115AA00131431 /* PostObject.h */,
+				01A112511D7115AA00131431 /* PostObject.m */,
+				01A112521D7115AA00131431 /* UserObject.h */,
+				01A112531D7115AA00131431 /* UserObject.m */,
 				01A111ED1D6DD52700131431 /* Models */,
 				013423881D6C4B6700799E34 /* Main.storyboard */,
 				0134238B1D6C4B6700799E34 /* Assets.xcassets */,
@@ -240,6 +253,8 @@
 				01A112211D6EC94700131431 /* Normal */,
 				01A111EE1D6DD52700131431 /* JYObject.h */,
 				01A111EF1D6DD52700131431 /* JYObject.m */,
+				01A112561D712A8500131431 /* JYRLMObject.h */,
+				01A112571D712A8500131431 /* JYRLMObject.m */,
 				01A112001D6E8AB600131431 /* JYPostObject.h */,
 				01A112011D6E8AB600131431 /* JYPostObject.m */,
 				01A111FD1D6E87EC00131431 /* JYUserObject.h */,
@@ -507,6 +522,7 @@
 				01A112371D6FEC3D00131431 /* JYNullObject.m in Sources */,
 				01A112401D70919900131431 /* JYPreorderObject.m in Sources */,
 				01A1123A1D704EAE00131431 /* JYRewardObject.m in Sources */,
+				01A112541D7115AA00131431 /* PostObject.m in Sources */,
 				01A111FC1D6DDBB200131431 /* JYCommentObject.m in Sources */,
 				013423841D6C4B6700799E34 /* AppDelegate.m in Sources */,
 				013423811D6C4B6700799E34 /* main.m in Sources */,
@@ -521,6 +537,7 @@
 				01A112301D6ED53C00131431 /* JYResponseObject.m in Sources */,
 				01A112021D6E8AB600131431 /* JYPostObject.m in Sources */,
 				01A111F01D6DD52700131431 /* JYObject.m in Sources */,
+				01A112551D7115AA00131431 /* UserObject.m in Sources */,
 				01A111F91D6DDAA000131431 /* JYLocationObject.m in Sources */,
 				01A1122D1D6ECD3C00131431 /* JYCashbackObject.m in Sources */,
 				01A111FF1D6E87EC00131431 /* JYUserObject.m in Sources */,
@@ -530,6 +547,7 @@
 				01A1123D1D706E5A00131431 /* JYUserVerifyResponseObject.m in Sources */,
 				01A1121A1D6EBFC200131431 /* JYChainObject.m in Sources */,
 				01A112141D6EA76200131431 /* JYProductObject.m in Sources */,
+				01A112581D712A8500131431 /* JYRLMObject.m in Sources */,
 				01A1120B1D6E9E0400131431 /* JYPushNotificationObject.m in Sources */,
 				01A112271D6ECA1E00131431 /* JYWalletObject.m in Sources */,
 				01A112051D6E8CFD00131431 /* JYStringObject.m in Sources */,

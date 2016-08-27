@@ -27,6 +27,11 @@
 
 @implementation JYUserObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, avatar, nickname, phone, gender, birthday;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

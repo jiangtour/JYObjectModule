@@ -54,5 +54,9 @@
 /*!
  *  JYCashbackObject.
  */
-@interface JYCashbackObject : RLMObject <JYCashbackObject>
+@interface JYCashbackObject : JYRLMObject <JYCashbackObject>
+/*!
+ *  User where the cash back from.
+ */
+@property(strong, nonatomic, nonnull) __kindof JYUserObject *user;
 @end

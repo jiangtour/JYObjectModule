@@ -49,5 +49,5 @@
 /*!
  *  JYChargeObject.
  */
-@interface JYChargeObject : RLMObject <JYChargeObject>
+@interface JYChargeObject : JYRLMObject <JYChargeObject>
 @end

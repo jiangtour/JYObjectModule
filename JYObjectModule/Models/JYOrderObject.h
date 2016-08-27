@@ -46,5 +46,9 @@
 /*!
  *  JYOrderObject.
  */
-@interface JYOrderObject : RLMObject <JYOrderObject>
+@interface JYOrderObject : JYRLMObject <JYOrderObject>
+/*!
+ *  Product object.
+ */
+@property(strong, nonatomic, nonnull) __kindof JYProductObject *product;
 @end

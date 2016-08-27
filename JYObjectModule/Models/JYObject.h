@@ -23,8 +23,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <Realm/Realm.h>
+#import "JYRLMObject.h"
 /*!
  *  Basic object protocol of JYObjectModule.
  */
@@ -58,5 +57,5 @@
 /*!
  *  JYObject.
  */
-@interface JYObject : RLMObject <JYObject>
+@interface JYObject : JYRLMObject <JYObject>
 @end

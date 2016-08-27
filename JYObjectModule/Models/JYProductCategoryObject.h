@@ -33,5 +33,5 @@
 /*!
  *  JYProfuctCategoryObject.
  */
-@interface JYProductCategoryObject : RLMObject <JYProductCategoryObject>
+@interface JYProductCategoryObject : JYRLMObject <JYProductCategoryObject>
 @end

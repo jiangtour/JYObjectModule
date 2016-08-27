@@ -37,5 +37,5 @@
 /*!
  *  JYStringObject.
  */
-@interface JYStringObject : RLMObject <JYStringObject>
+@interface JYStringObject : JYRLMObject <JYStringObject>
 @end

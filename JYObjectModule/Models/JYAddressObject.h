@@ -50,7 +50,7 @@
 /*!
  *  JYAddressObject.
  */
-@interface JYAddressObject : RLMObject <JYAddressObject>
+@interface JYAddressObject : JYRLMObject <JYAddressObject>
 /*!
  *  Location info of address object.
  */

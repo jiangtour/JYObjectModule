@@ -61,5 +61,5 @@
 /*!
  *  JYLocationObject.
  */
-@interface JYLocationObject : RLMObject <JYLocationObject>
+@interface JYLocationObject : JYRLMObject <JYLocationObject>
 @end

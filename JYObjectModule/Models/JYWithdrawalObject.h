@@ -53,5 +53,5 @@
 /*!
  *  Account of withdrawal.
  */
-@interface JYWithdrawalObject : RLMObject <JYWithdrawalObject>
+@interface JYWithdrawalObject : JYRLMObject <JYWithdrawalObject>
 @end

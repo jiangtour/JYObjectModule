@@ -70,5 +70,5 @@ typedef NS_ENUM(int64_t, JYUserGender) {
 /*!
  *  JYUserObject.
  */
-@interface JYUserObject : RLMObject <JYUserObject>
+@interface JYUserObject : JYRLMObject <JYUserObject>
 @end

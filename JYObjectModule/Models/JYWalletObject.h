@@ -53,5 +53,5 @@
 /*!
  *  JYWalletObject.
  */
-@interface JYWalletObject : RLMObject <JYWalletObject>
+@interface JYWalletObject : JYRLMObject <JYWalletObject>
 @end

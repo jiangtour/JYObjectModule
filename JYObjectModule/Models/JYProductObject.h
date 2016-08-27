@@ -72,5 +72,5 @@
 /*!
  *  JYProductObject.
  */
-@interface JYProductObject : RLMObject <JYProductObject>
+@interface JYProductObject : JYRLMObject <JYProductObject>
 @end

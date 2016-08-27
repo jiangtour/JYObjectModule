@@ -27,6 +27,11 @@
 
 @implementation JYLocationObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, longitude, latitude, province, city, district, street, address;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

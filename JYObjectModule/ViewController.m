@@ -11,6 +11,9 @@
 #import "JYImageObject.h"
 #import "JYBannerObject.h"
 #import "JYCommentObject.h"
+#import <objc/runtime.h>
+
+#import "PostObject.h"
 
 @interface ViewController ()
 
@@ -21,24 +24,47 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    JYObject *object = [JYObject new];
-    object.objectId = @"sanpaopajpaojsdaopjdapojda";
     RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [realm deleteAllObjects];
+    [realm commitWriteTransaction];
+    JYObject *object = [JYObject new];
+    object.objectId = [NSString stringWithFormat:@"%@", @([[NSDate date] timeIntervalSince1970])];
+    
     NSLog(@"path : %@", realm.configuration.fileURL.absoluteString);
     JYImageObject *image = [JYImageObject new];
+    image.objectId = [NSString stringWithFormat:@"%@", @([[NSDate date] timeIntervalSince1970]+1)];
     image.url = @"http://www.baidu.com";
     JYUserObject *user = [JYUserObject new];
+    user.objectId = [NSString stringWithFormat:@"%@", @([[NSDate date] timeIntervalSince1970]+2)];
     user.nickname = @"devedbox";
-    user.objectId = @"862099730";
     JYCommentObject *comment = [JYCommentObject new];
+    comment.objectId = [NSString stringWithFormat:@"%@", @([[NSDate date] timeIntervalSince1970]+3)];
     [comment.images addObject:image];
     comment.user = user;
     comment.atUser = user;
+    
+    UserObject *_user = [UserObject new];
+    _user.objectId = [NSString stringWithFormat:@"%@", @([[NSDate date] timeIntervalSince1970]+4)];
+    _user.test = @"hhh";
+    _user.nickname = @"UserObject";
+    PostObject *_post = [PostObject new];
+    _post.objectId = [NSString stringWithFormat:@"%@", @([[NSDate date] timeIntervalSince1970]+5)];
+    _post.title = @"PostObject";
+    _post.user = _user;
+    JYPostObject *post = [JYPostObject new];
+    post.objectId = [NSString stringWithFormat:@"%@", @([[NSDate date] timeIntervalSince1970]+6)];
+    post.user = _user;
+    post.title = @"JYPostObject";
+    
     [realm beginWriteTransaction];
-    [realm addObject:object];
-    [realm addObject:image];
-    [realm addObject:user];
-    [realm addObject:comment];
+    [realm addOrUpdateObject:object];
+    [realm addOrUpdateObject:image];
+    [realm addOrUpdateObject:user];
+    [realm addOrUpdateObject:comment];
+    [realm addOrUpdateObject:_user];
+    [realm addOrUpdateObject:_post];
+    [realm addOrUpdateObject:post];
     [realm commitWriteTransaction];
 }
 

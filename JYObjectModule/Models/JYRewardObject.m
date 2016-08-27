@@ -27,6 +27,11 @@
 
 @implementation JYRewardObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, title, detail, amount, type, subtype, state, substate;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

@@ -27,6 +27,11 @@
 
 @implementation JYPostObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, user, title, detail, content, images, readCount, commentCount, liked, likeCount, shareCount, comments;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

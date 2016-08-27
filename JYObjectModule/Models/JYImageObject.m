@@ -27,6 +27,11 @@
 
 @implementation JYImageObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, url;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

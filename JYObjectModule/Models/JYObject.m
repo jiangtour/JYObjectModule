@@ -27,6 +27,11 @@
 
 @implementation JYObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

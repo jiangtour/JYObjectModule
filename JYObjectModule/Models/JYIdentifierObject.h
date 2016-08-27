@@ -57,5 +57,5 @@
 /*!
  *  JYIdentifierObject.
  */
-@interface JYIdentifierObject : RLMObject <JYIdentifierObject>
+@interface JYIdentifierObject : JYRLMObject <JYIdentifierObject>
 @end

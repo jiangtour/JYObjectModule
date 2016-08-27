@@ -27,6 +27,11 @@
 
 @implementation JYOutcomeObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, amount, type, subtype, channel;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

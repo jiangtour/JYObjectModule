@@ -27,6 +27,11 @@
 
 @implementation JYAddressObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, name, phone, defaulted, location;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {
@@ -46,6 +51,6 @@
 }
 + (NSArray *)requiredProperties
 {
-    return @[@"objectId", @"name", @"phone", @"location"];
+    return @[@"objectId", @"name", @"phone"/*, @"location"*/];
 }
 @end

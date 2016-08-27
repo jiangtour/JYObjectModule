@@ -27,6 +27,11 @@
 
 @implementation JYCashbackObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, user, type, subtype, amount, statements;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

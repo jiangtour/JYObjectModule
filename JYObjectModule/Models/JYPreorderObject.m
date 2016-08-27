@@ -27,6 +27,11 @@
 
 @implementation JYPreorderObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, state, substate, product;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

@@ -27,6 +27,11 @@
 
 @implementation JYIdentifierObject
 @synthesize objectId, userId, index, atUpdation, atCreation, descriptions, state, substate, name, identifier, phone, statements;
+
++ (void)load {
+    [super load];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {

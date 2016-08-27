@@ -37,5 +37,5 @@
 /*!
  *  JYImageObject.
  */
-@interface JYImageObject : RLMObject <JYImageObject>
+@interface JYImageObject : JYRLMObject <JYImageObject>
 @end
