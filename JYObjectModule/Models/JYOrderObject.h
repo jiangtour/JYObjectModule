@@ -27,6 +27,25 @@
 #import "JYProductObject.h"
 /*!
  *  Order object protocol.
+ *
+ *  @discusstion The object is defined inherited the RLMObject. If you would like to override the properties, redefined a class and confirm to protocols and redeclare the custom proprties.
+ If you would like to add new properties. Subclass a new class inherited from the JYClass and add your new properties.
+ *
+ *  \@interface OverridePostObject: JYRLMObject <JYPostObject>
+ 
+ // new user object.
+ 
+ \@property() CustomUserObject *user;
+ 
+ \@end
+ *
+ *  \@interface AddPostObject: JYPostObject
+ 
+ // new user object.
+ 
+ \@property() CustomProperty *newProperty;
+ 
+ \@end
  */
 @protocol JYOrderObject <JYObject>
 @required
@@ -41,14 +60,10 @@
 /*!
  *  Product object.
  */
-@property(strong, nonatomic, nonnull) id<JYProductObject> product;
+@property(strong, nonatomic, nonnull) __kindof JYProductObject *product;
 @end
 /*!
  *  JYOrderObject.
  */
 @interface JYOrderObject : JYRLMObject <JYOrderObject>
-/*!
- *  Product object.
- */
-@property(strong, nonatomic, nonnull) __kindof JYProductObject *product;
 @end

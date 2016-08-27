@@ -8,7 +8,7 @@
 #import "JYPostObject.h"
 #import "UserObject.h"
 
-@interface PostObject : JYPostObject
+@interface PostObject : JYRLMObject <JYPostObject>
 /// User who post the content.
-//@property(strong, nonatomic, nonnull) UserObject *user;
+@property(strong, nonatomic, nonnull) UserObject *user;
 @end

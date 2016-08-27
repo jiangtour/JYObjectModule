@@ -20,11 +20,5 @@
 
 @implementation JYRLMObject
 + (void)load {
-    // Get class of self.
-    Class cls = self;
-    NSLog(@"current class: %@", NSStringFromClass(cls));
-    // Get super class.
-    Class superCls = class_getSuperclass(cls);
-    NSLog(@"super class: %@", NSStringFromClass(superCls));
 }
 @end

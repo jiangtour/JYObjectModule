@@ -29,13 +29,32 @@
 #import "JYCommentObject.h"
 /*!
  *  Post object protocol.
+ *
+ *  @discusstion The object is defined inherited the RLMObject. If you would like to override the properties, redefined a class and confirm to protocols and redeclare the custom proprties.
+ If you would like to add new properties. Subclass a new class inherited from the JYClass and add your new properties.
+ *
+ *  \@interface OverridePostObject: JYRLMObject <JYPostObject>
+ 
+ // new user object.
+ 
+ \@property() CustomUserObject *user;
+ 
+ \@end
+ *
+ *  \@interface AddPostObject: JYPostObject
+ 
+ // new user object.
+ 
+ \@property() CustomProperty *newProperty;
+ 
+ \@end
  */
 @protocol JYPostObject <JYObject>
 @required
 /*!
  *  User who post the content.
  */
-@property(strong, nonatomic, nonnull) id<JYUserObject> user;
+@property(strong, nonatomic, nonnull) __kindof JYUserObject *user;
 /*!
  *  Title of post.
  */
@@ -81,8 +100,4 @@
  *  JYPostObject.
  */
 @interface JYPostObject : JYRLMObject <JYPostObject>
-/*!
- *  User who post the content.
- */
-@property(strong, nonatomic, nonnull) __kindof JYUserObject *user;
 @end

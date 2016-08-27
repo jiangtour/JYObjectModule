@@ -55,7 +55,7 @@
     JYPostObject *post = [JYPostObject new];
     post.objectId = [NSString stringWithFormat:@"%@", @([[NSDate date] timeIntervalSince1970]+6)];
     post.user = _user;
-    post.title = @"JYPostObject";
+    post.title = @"JYRLMPostObject";
     
     [realm beginWriteTransaction];
     [realm addOrUpdateObject:object];

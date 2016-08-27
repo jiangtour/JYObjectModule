@@ -19,6 +19,8 @@
 #import <Foundation/Foundation.h>
 #import <Realm/Realm.h>
 #import <objc/runtime.h>
-
+/*!
+ *  JYRLMObject basic realm object.
+ */
 @interface JYRLMObject : RLMObject
 @end
