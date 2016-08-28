@@ -29,25 +29,6 @@
 #import "JYProductCategoryObject.h"
 /*!
  *  Product object protocol.
- *
- *  @discusstion The object is defined inherited the RLMObject. If you would like to override the properties, redefined a class and confirm to protocols and redeclare the custom proprties.
- If you would like to add new properties. Subclass a new class inherited from the JYClass and add your new properties.
- *
- *  \@interface OverridePostObject: JYRLMObject <JYPostObject>
- 
- // new user object.
- 
- \@property() CustomUserObject *user;
- 
- \@end
- *
- *  \@interface AddPostObject: JYPostObject
- 
- // new user object.
- 
- \@property() CustomProperty *newProperty;
- 
- \@end
  */
 @protocol JYProductObject <JYObject>
 @required
@@ -78,6 +59,23 @@
 /*!
  *  Images of product object.
  */
+@property(strong, nonatomic, nullable) RLMArray<JYImageObject> *images;
+/*!
+ *  Characteristics of product object.
+ */
+@property(strong, nonatomic, nullable) RLMArray<JYIntegerObject> *characteristics;
+/*!
+ *  Categories of product object.
+ */
+@property(strong, nonatomic, nullable) RLMArray<JYProductCategoryObject> *categories;
+@end
+/*!
+ *  JYProductObject.
+ */
+@interface JYProductObject : JYRLMObject <JYProductObject>
+/*!
+ *  Images of product object.
+ */
 @property(strong, nonatomic, nullable) RLMArray<__kindof JYImageObject *><JYImageObject> *images;
 /*!
  *  Characteristics of product object.
@@ -87,9 +85,4 @@
  *  Categories of product object.
  */
 @property(strong, nonatomic, nullable) RLMArray<__kindof JYProductCategoryObject *><JYProductCategoryObject> *categories;
-@end
-/*!
- *  JYProductObject.
- */
-@interface JYProductObject : JYRLMObject <JYProductObject>
 @end

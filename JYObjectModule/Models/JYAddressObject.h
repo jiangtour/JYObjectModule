@@ -27,25 +27,6 @@
 #import "JYLocationObject.h"
 /*!
  *  Address object protocol.
- *
- *  @discusstion The object is defined inherited the RLMObject. If you would like to override the properties, redefined a class and confirm to protocols and redeclare the custom proprties.
- If you would like to add new properties. Subclass a new class inherited from the JYClass and add your new properties.
- *
- *  \@interface OverridePostObject: JYRLMObject <JYPostObject>
- 
- // new user object.
- 
- \@property() CustomUserObject *user;
- 
- \@end
- *
- *  \@interface AddPostObject: JYPostObject
- 
- // new user object.
- 
- \@property() CustomProperty *newProperty;
- 
- \@end
  */
 @protocol JYAddressObject <JYObject>
 @required
@@ -64,10 +45,14 @@
 /*!
  *  Location info of address object.
  */
-@property(strong, nonatomic, nonnull) __kindof JYLocationObject *location;
+@property(strong, nonatomic, nonnull) id<JYLocationObject> location;
 @end
 /*!
  *  JYAddressObject.
  */
 @interface JYAddressObject : JYRLMObject <JYAddressObject>
+/*!
+ *  Location info of address object.
+ */
+@property(strong, nonatomic, nonnull) __kindof JYLocationObject *location;
 @end

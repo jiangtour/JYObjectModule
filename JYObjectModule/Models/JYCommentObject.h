@@ -28,25 +28,6 @@
 #import "JYImageObject.h"
 /*!
  *  Comment object protocol.
- *
- *  @discusstion The object is defined inherited the RLMObject. If you would like to override the properties, redefined a class and confirm to protocols and redeclare the custom proprties.
- If you would like to add new properties. Subclass a new class inherited from the JYClass and add your new properties.
- *
- *  \@interface OverridePostObject: JYRLMObject <JYPostObject>
- 
- // new user object.
- 
- \@property() CustomUserObject *user;
- 
- \@end
- *
- *  \@interface AddPostObject: JYPostObject
- 
- // new user object.
- 
- \@property() CustomProperty *newProperty;
- 
- \@end
  */
 @protocol JYCommentObject <JYObject>
 @required
@@ -54,6 +35,23 @@
  *  Content of comment.
  */
 @property(copy, nonatomic, nonnull) NSString *content;
+/*!
+ *  Commenting user of comment.
+ */
+@property(strong, nonatomic, nonnull) id<JYUserObject> user;
+/*!
+ *  Commented user of comment.
+ */
+@property(strong, nonatomic, nullable) id<JYUserObject> atUser;
+/*!
+ *  Comment images.
+ */
+@property(strong, nonatomic, nullable) RLMArray<JYImageObject> *images;
+@end
+/*!
+ *  JYCommentObject.
+ */
+@interface JYCommentObject : JYRLMObject <JYCommentObject>
 /*!
  *  Commenting user of comment.
  */
@@ -66,9 +64,4 @@
  *  Comment images.
  */
 @property(strong, nonatomic, nullable) RLMArray<__kindof JYImageObject *><JYImageObject> *images;
-@end
-/*!
- *  JYCommentObject.
- */
-@interface JYCommentObject : JYRLMObject <JYCommentObject>
 @end

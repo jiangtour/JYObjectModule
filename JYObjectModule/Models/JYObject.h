@@ -30,21 +30,21 @@
  *  @discusstion The object is defined inherited the RLMObject. If you would like to override the properties, redefined a class and confirm to protocols and redeclare the custom proprties.
      If you would like to add new properties. Subclass a new class inherited from the JYClass and add your new properties.
  *
- *  \@interface OverridePostObject: JYRLMObject <JYPostObject>
+ *  @interface OverridePostObject: JYRLMObject <JYPostObject>
  
     // new user object.
  
-    \@property() CustomUserObject *user;
+    @property() CustomUserObject *user;
  
-    \@end
+    @end
  *
- *  \@interface AddPostObject: JYPostObject
+ *  @interface AddPostObject: JYPostObject
  
     // new user object.
  
-    \@property() CustomProperty *newProperty;
+    @property() CustomProperty *newProperty;
  
-    \@end
+    @end
  */
 @protocol JYObject <NSObject>
 @required
