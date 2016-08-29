@@ -23,26 +23,34 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#ifndef JYObjectModule_h
-#define JYObjectModule_h
+#import <JYObjectModule/JYObject.h>
+#import <JYObjectModule/JYRLMObject.h>
+#import <JYObjectModule/JYPostObject.h>
+#import <JYObjectModule/JYUserObject.h>
+#import <JYObjectModule/JYOrderObject.h>
+#import <JYObjectModule/JYChainObject.h>
+#import <JYObjectModule/JYImageObject.h>
+#import <JYObjectModule/JYWalletObject.h>
+#import <JYObjectModule/JYStringObject.h>
+#import <JYObjectModule/JYBannerObject.h>
+#import <JYObjectModule/JYChargeObject.h>
+#import <JYObjectModule/JYIncomeObject.h>
+#import <JYObjectModule/JYRewardObject.h>
+#import <JYObjectModule/JYIntegerObject.h>
+#import <JYObjectModule/JYProductObject.h>
+#import <JYObjectModule/JYCommentObject.h>
+#import <JYObjectModule/JYAddressObject.h>
+#import <JYObjectModule/JYOutcomeObject.h>
+#import <JYObjectModule/JYLocationObject.h>
+#import <JYObjectModule/JYCashbackObject.h>
+#import <JYObjectModule/JYPreorderObject.h>
+#import <JYObjectModule/JYIdentifierObject.h>
+#import <JYObjectModule/JYWithdrawalObject.h>
+#import <JYObjectModule/JYProductCategoryObject.h>
+#import <JYObjectModule/JYPushNotificationObject.h>
 
-#import "JYObject.h"
-#import "JYPostObject.h"
-#import "JYUserObject.h"
-#import "JYOrderObject.h"
-#import "JYChainObject.h"
-#import "JYImageObject.h"
-#import "JYWalletObject.h"
-#import "JYStringObject.h"
-#import "JYBannerObject.h"
-#import "JYIntegerObject.h"
-#import "JYProductObject.h"
-#import "JYCommentObject.h"
-#import "JYLocationObject.h"
-#import "JYCashbackObject.h"
-#import "JYIdentifierObject.h"
-#import "JYWithdrawalObject.h"
-#import "JYProductCategoryObject.h"
-#import "JYPushNotificationObject.h"
-
-#endif /* JYObjectModule_h */
+// Cocoa:
+#import <JYObjectModule/JYNullObject.h>
+#import <JYObjectModule/JYPageObject.h>
+#import <JYObjectModule/JYResponseObject.h>
+#import <JYObjectModule/JYUserVerifyResponseObject.h>
