@@ -62,7 +62,7 @@ static Class _Nullable JYResponseClassWithObjectTypeString(NSString * _Nonnull o
     // Get the class components of class info.
     NSArray *classComponents = [classInfo componentsSeparatedByString:@"."];
     
-    return [classComponents lastObject];
+    return NSClassFromString([classComponents lastObject]);
 }
 /*!
  *  Get the web module of response.
