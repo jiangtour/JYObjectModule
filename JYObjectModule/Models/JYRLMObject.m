@@ -21,4 +21,8 @@
 @implementation JYRLMObject
 + (void)load {
 }
+
++ (BOOL)shouldStoreToRealm {
+    return YES;
+}
 @end

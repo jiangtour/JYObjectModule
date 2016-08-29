@@ -23,4 +23,10 @@
  *  JYRLMObject basic realm object.
  */
 @interface JYRLMObject : RLMObject
+/*!
+ *  Should store the object to Realm database. Default is YES.
+ *
+ *  @return a boolean value.
+ */
++ (BOOL)shouldStoreToRealm;
 @end
