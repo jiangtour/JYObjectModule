@@ -1,9 +1,9 @@
 //
 //  JYObject.m
-//  AXHTTPClient
+//  JYObjectModule
 //
-//  Created by devedbox on 16/8/24.
-//  Copyright © 2016年 devedbox. All rights reserved.
+//  Created by devedbox on 16/8/25.
+//  Copyright © 2016年 jiangyou. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -35,11 +35,11 @@
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {
-    return @[@"index", @"atUpdation", @"atCreation", @"descriptions"];
+    return @[@"objectId", @"userId", @"index", @"descriptions"];
 }
 + (nullable NSDictionary *)defaultPropertyValues
 {
-    return @{@"index":@(-1)};
+    return @{@"index":@(-1), @"atUpdation":@(-1.0)};
 }
 + (nullable NSString *)primaryKey
 {

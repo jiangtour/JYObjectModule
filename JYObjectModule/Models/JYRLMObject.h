@@ -30,3 +30,11 @@
  */
 + (BOOL)shouldStoreToRealm;
 @end
+
+@interface NSArray (JYRLMObject)
+- (nonnull instancetype)addObjectsFromArray:(NSArray * _Nonnull)otherArray;
+@end
+
+@interface NSDictionary (JYRLMObject)
+- (nonnull instancetype)addEntriesFromDictionary:(NSDictionary *_Nonnull)otherDictionary;
+@end

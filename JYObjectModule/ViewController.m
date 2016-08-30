@@ -14,6 +14,8 @@
 #import <objc/runtime.h>
 
 #import "PostObject.h"
+#import "RLMObject+KeyValue.h"
+#import "JYClientObject.h"
 
 @interface ViewController ()
 
@@ -66,6 +68,10 @@
     [realm addOrUpdateObject:_post];
     [realm addOrUpdateObject:post];
     [realm commitWriteTransaction];
+    
+    NSLog(@"post object: %@", [PostObject objectWithKeyValue:@{@"user":user.keyValue, @"images":@[@{@"url":@"www.baidu.com"}], @"comments":@[@{@"user":user.keyValue, @"images":@[@{@"url":@"weibo.sina.cn"}]}]}]);
+    
+    [JYClientObject activeClientWithUserId:[NSString stringWithFormat:@"%@", @([[NSDate date] timeIntervalSince1970]+1)]];
 }
 
 - (void)didReceiveMemoryWarning {

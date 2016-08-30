@@ -35,22 +35,22 @@
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {
-    return @[@"index", @"atUpdation", @"atCreation", @"descriptions", @"title", @"detail", @"readCount", @"commentCount", @"liked", @"likeCount", @"shareCount"];
+    return [[super indexedProperties] addObjectsFromArray:@[@"title", @"detail", @"readCount", @"commentCount", @"liked", @"likeCount", @"shareCount"]];
 }
 + (nullable NSDictionary *)defaultPropertyValues
 {
-    return @{@"index":@(-1), @"readCount":@(0), @"commentCount":@(0), @"liked":@(0), @"likeCount":@(0), @"shareCount":@(0)};
+    return [[super defaultPropertyValues] addEntriesFromDictionary:@{@"readCount":@(0), @"commentCount":@(0), @"liked":@(0), @"likeCount":@(0), @"shareCount":@(0)}];
 }
 + (nullable NSString *)primaryKey
 {
-    return @"objectId";
+    return [super primaryKey];
 }
 + (nullable NSArray *)ignoredProperties
 {
-    return nil;
+    return [super ignoredProperties];
 }
 + (NSArray *)requiredProperties
 {
-    return @[@"objectId"];
+    return [super requiredProperties];
 }
 @end

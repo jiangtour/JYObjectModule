@@ -46,6 +46,13 @@
 		01A112541D7115AA00131431 /* PostObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112511D7115AA00131431 /* PostObject.m */; };
 		01A112551D7115AA00131431 /* UserObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112531D7115AA00131431 /* UserObject.m */; };
 		01A112581D712A8500131431 /* JYRLMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A112571D712A8500131431 /* JYRLMObject.m */; };
+		01A113B11D74778800131431 /* _RLMRealmConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01A113A61D74778800131431 /* _RLMRealmConfiguration.plist */; };
+		01A113B31D74778800131431 /* JYRealmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A113AA1D74778800131431 /* JYRealmManager.m */; };
+		01A113B41D74778800131431 /* RLMRealm+DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A113AC1D74778800131431 /* RLMRealm+DataHandler.m */; };
+		01A113B51D74778800131431 /* RLMRealm+Migration.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A113AE1D74778800131431 /* RLMRealm+Migration.m */; };
+		01A113B61D74778800131431 /* RLMRealmConfiguration+Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A113B01D74778800131431 /* RLMRealmConfiguration+Client.m */; };
+		01A113B91D74806F00131431 /* JYClientObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A113B81D74806F00131431 /* JYClientObject.m */; };
+		01A113BC1D74827100131431 /* RLMObject+KeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A113BB1D74827100131431 /* RLMObject+KeyValue.m */; };
 		26E28937F087F5FF16E2F54D /* libPods-JYObjectModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF76E61B47DFF0171C2DC70F /* libPods-JYObjectModule.a */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +153,19 @@
 		01A112531D7115AA00131431 /* UserObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserObject.m; sourceTree = "<group>"; };
 		01A112561D712A8500131431 /* JYRLMObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYRLMObject.h; sourceTree = "<group>"; };
 		01A112571D712A8500131431 /* JYRLMObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYRLMObject.m; sourceTree = "<group>"; };
+		01A113A61D74778800131431 /* _RLMRealmConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _RLMRealmConfiguration.plist; sourceTree = "<group>"; };
+		01A113A91D74778800131431 /* JYRealmManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYRealmManager.h; sourceTree = "<group>"; };
+		01A113AA1D74778800131431 /* JYRealmManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYRealmManager.m; sourceTree = "<group>"; };
+		01A113AB1D74778800131431 /* RLMRealm+DataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RLMRealm+DataHandler.h"; sourceTree = "<group>"; };
+		01A113AC1D74778800131431 /* RLMRealm+DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RLMRealm+DataHandler.m"; sourceTree = "<group>"; };
+		01A113AD1D74778800131431 /* RLMRealm+Migration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RLMRealm+Migration.h"; sourceTree = "<group>"; };
+		01A113AE1D74778800131431 /* RLMRealm+Migration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RLMRealm+Migration.m"; sourceTree = "<group>"; };
+		01A113AF1D74778800131431 /* RLMRealmConfiguration+Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RLMRealmConfiguration+Client.h"; sourceTree = "<group>"; };
+		01A113B01D74778800131431 /* RLMRealmConfiguration+Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RLMRealmConfiguration+Client.m"; sourceTree = "<group>"; };
+		01A113B71D74806F00131431 /* JYClientObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYClientObject.h; sourceTree = "<group>"; };
+		01A113B81D74806F00131431 /* JYClientObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYClientObject.m; sourceTree = "<group>"; };
+		01A113BA1D74827100131431 /* RLMObject+KeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RLMObject+KeyValue.h"; sourceTree = "<group>"; };
+		01A113BB1D74827100131431 /* RLMObject+KeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RLMObject+KeyValue.m"; sourceTree = "<group>"; };
 		60CC7FE29AC188273B1DD6F0 /* Pods-JYObjectModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYObjectModule.release.xcconfig"; path = "Pods/Target Support Files/Pods-JYObjectModule/Pods-JYObjectModule.release.xcconfig"; sourceTree = "<group>"; };
 		BD7ADAD0C974A780565ACC78 /* Pods-JYObjectModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYObjectModule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JYObjectModule/Pods-JYObjectModule.debug.xcconfig"; sourceTree = "<group>"; };
 		BF76E61B47DFF0171C2DC70F /* libPods-JYObjectModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JYObjectModule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				01A112311D6FD9B900131431 /* JYObjectModule.h */,
+				01A113A51D74778800131431 /* Storage */,
 				01A112211D6EC94700131431 /* Normal */,
 				01A111EE1D6DD52700131431 /* JYObject.h */,
 				01A111EF1D6DD52700131431 /* JYObject.m */,
@@ -318,6 +339,26 @@
 				01A1123C1D706E5A00131431 /* JYUserVerifyResponseObject.m */,
 			);
 			path = Normal;
+			sourceTree = "<group>";
+		};
+		01A113A51D74778800131431 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				01A113B71D74806F00131431 /* JYClientObject.h */,
+				01A113B81D74806F00131431 /* JYClientObject.m */,
+				01A113A91D74778800131431 /* JYRealmManager.h */,
+				01A113AA1D74778800131431 /* JYRealmManager.m */,
+				01A113BA1D74827100131431 /* RLMObject+KeyValue.h */,
+				01A113BB1D74827100131431 /* RLMObject+KeyValue.m */,
+				01A113AD1D74778800131431 /* RLMRealm+Migration.h */,
+				01A113AE1D74778800131431 /* RLMRealm+Migration.m */,
+				01A113AB1D74778800131431 /* RLMRealm+DataHandler.h */,
+				01A113AC1D74778800131431 /* RLMRealm+DataHandler.m */,
+				01A113AF1D74778800131431 /* RLMRealmConfiguration+Client.h */,
+				01A113B01D74778800131431 /* RLMRealmConfiguration+Client.m */,
+				01A113A61D74778800131431 /* _RLMRealmConfiguration.plist */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		378E786BB84A00029C0FE7BD /* Pods */ = {
@@ -444,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0134238F1D6C4B6700799E34 /* LaunchScreen.storyboard in Resources */,
+				01A113B11D74778800131431 /* _RLMRealmConfiguration.plist in Resources */,
 				0134238C1D6C4B6700799E34 /* Assets.xcassets in Resources */,
 				0134238A1D6C4B6700799E34 /* Main.storyboard in Resources */,
 			);
@@ -524,11 +566,14 @@
 				01A1123A1D704EAE00131431 /* JYRewardObject.m in Sources */,
 				01A112541D7115AA00131431 /* PostObject.m in Sources */,
 				01A111FC1D6DDBB200131431 /* JYCommentObject.m in Sources */,
+				01A113B31D74778800131431 /* JYRealmManager.m in Sources */,
 				013423841D6C4B6700799E34 /* AppDelegate.m in Sources */,
 				013423811D6C4B6700799E34 /* main.m in Sources */,
 				01A112341D6FDBF200131431 /* JYAddressObject.m in Sources */,
 				01A112241D6EC94700131431 /* JYPageObject.m in Sources */,
 				01A1122A1D6ECB2000131431 /* JYWithdrawalObject.m in Sources */,
+				01A113B51D74778800131431 /* RLMRealm+Migration.m in Sources */,
+				01A113B61D74778800131431 /* RLMRealmConfiguration+Client.m in Sources */,
 				01A112171D6EA96700131431 /* JYIntegerObject.m in Sources */,
 				01A1121D1D6EC85600131431 /* JYProductCategoryObject.m in Sources */,
 				01A1120E1D6EA5A000131431 /* JYIdentifierObject.m in Sources */,
@@ -537,6 +582,7 @@
 				01A112301D6ED53C00131431 /* JYResponseObject.m in Sources */,
 				01A112021D6E8AB600131431 /* JYPostObject.m in Sources */,
 				01A111F01D6DD52700131431 /* JYObject.m in Sources */,
+				01A113BC1D74827100131431 /* RLMObject+KeyValue.m in Sources */,
 				01A112551D7115AA00131431 /* UserObject.m in Sources */,
 				01A111F91D6DDAA000131431 /* JYLocationObject.m in Sources */,
 				01A1122D1D6ECD3C00131431 /* JYCashbackObject.m in Sources */,
@@ -551,7 +597,9 @@
 				01A1120B1D6E9E0400131431 /* JYPushNotificationObject.m in Sources */,
 				01A112271D6ECA1E00131431 /* JYWalletObject.m in Sources */,
 				01A112051D6E8CFD00131431 /* JYStringObject.m in Sources */,
+				01A113B41D74778800131431 /* RLMRealm+DataHandler.m in Sources */,
 				01A112491D7093B500131431 /* JYOutcomeObject.m in Sources */,
+				01A113B91D74806F00131431 /* JYClientObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,9 +1,9 @@
 //
 //  JYObject.h
-//  AXHTTPClient
+//  JYObjectModule
 //
-//  Created by devedbox on 16/8/24.
-//  Copyright © 2016年 devedbox. All rights reserved.
+//  Created by devedbox on 16/8/25.
+//  Copyright © 2016年 jiangyou. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -63,11 +63,11 @@
 /*!
  *  Time stack of creation time of object.
  */
-@property(assign, nonatomic) int64_t atCreation;
+@property(assign, nonatomic) double atCreation;
 /*!
  *  Time stack of updation time of object.
  */
-@property(assign, nonatomic) int64_t atUpdation;
+@property(assign, nonatomic) double atUpdation;
 /*!
  *  Descriptions of object.
  */

@@ -17,6 +17,7 @@
 //  SOFTWARE.
 
 #import "JYRLMObject.h"
+#import "JYObject.h"
 
 @implementation JYRLMObject
 + (void)load {
@@ -24,5 +25,73 @@
 
 + (BOOL)shouldStoreToRealm {
     return YES;
+}
+
+#pragma mark - Realm support
++ (NSArray *)indexedProperties
+{
+    Class cls = self;
+    if (cls == JYRLMObject.class) {
+        return nil;
+    }
+    
+    NSArray *indexedProperties = JYObject.indexedProperties;
+    return indexedProperties;
+}
++ (nullable NSDictionary *)defaultPropertyValues
+{
+    Class cls = self;
+    if (cls == JYRLMObject.class) {
+        return nil;
+    }
+    
+    NSDictionary *defaultPropertyValues = JYObject.defaultPropertyValues;
+    return defaultPropertyValues;
+}
++ (nullable NSString *)primaryKey
+{
+    Class cls = self;
+    if (cls == JYRLMObject.class) {
+        return nil;
+    }
+    
+    NSString *primaryKey = JYObject.primaryKey;
+    return primaryKey;
+}
++ (nullable NSArray *)ignoredProperties
+{
+    Class cls = self;
+    if (cls == JYRLMObject.class) {
+        return nil;
+    }
+    
+    NSArray *ignoredProperties = JYObject.ignoredProperties;
+    return ignoredProperties;
+}
++ (NSArray *)requiredProperties
+{
+    Class cls = self;
+    if (cls == JYRLMObject.class) {
+        return nil;
+    }
+    
+    NSArray *requiredProperties = JYObject.requiredProperties;
+    return requiredProperties;
+}
+@end
+
+@implementation NSArray (JYRLMObject)
+- (NSArray *)addObjectsFromArray:(NSArray *)otherArray {
+    NSMutableArray *cmd = [self mutableCopy];
+    [cmd addObjectsFromArray:otherArray];
+    return [cmd copy];
+}
+@end
+
+@implementation NSDictionary (JYRLMObject)
+- (instancetype)addEntriesFromDictionary:(NSDictionary *)otherDictionary {
+    NSMutableDictionary *cmd = [self mutableCopy];
+    [cmd addEntriesFromDictionary:otherDictionary];
+    return [cmd copy];
 }
 @end

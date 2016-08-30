@@ -35,22 +35,22 @@
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {
-    return @[@"index", @"atUpdation", @"atCreation", @"descriptions"];
+    return [[super indexedProperties] addObjectsFromArray:@[@"province", @"city", @"district", @"street", @"address"]];
 }
 + (nullable NSDictionary *)defaultPropertyValues
 {
-    return @{@"index":@(-1), @"longitude":@(0.0), @"latitude":@(0.0)};
+    return [[super defaultPropertyValues] addEntriesFromDictionary:@{@"longitude":@(0.0), @"latitude":@(0.0)}];
 }
 + (nullable NSString *)primaryKey
 {
-    return @"objectId";
+    return [super primaryKey];
 }
 + (nullable NSArray *)ignoredProperties
 {
-    return nil;
+    return [super ignoredProperties];
 }
 + (NSArray *)requiredProperties
 {
-    return @[@"objectId"];
+    return [super requiredProperties];
 }
 @end
