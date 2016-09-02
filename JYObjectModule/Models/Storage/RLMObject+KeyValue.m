@@ -308,6 +308,12 @@
         // Get object if schema.
         id obj = objectSchema[key];
         
+        id object = mutableObject[key];
+        // Handle with NSNull object.
+        if ([mutableObject.allKeys containsObject:key] && [object isKindOfClass:[NSNull class]]) {
+            mutableObject[key] = [self appendNullIndicatorWithObject:[obj copy]];
+        }
+        
         if ([obj isKindOfClass:[NSDictionary class]]) {
             NSDictionary *childObject = [self convertObject:[mutableObject[key] copy] withSchema:objectSchema[key]];
             // Replace the child object.
@@ -321,5 +327,24 @@
     }
     
     return [mutableObject copy];
+}
+
++ (id _Nonnull)appendNullIndicatorWithObject:(id _Nonnull)object {
+    if ([object isKindOfClass:NSDictionary.class]) {
+        NSMutableDictionary *obj = [object mutableCopy];
+        // Append null.
+        NSArray *keys = [object allKeys];
+        
+        for (int i = 0; i < keys.count; i ++) {
+            id _obj = [self appendNullIndicatorWithObject:obj[keys[i]]];
+            [obj setObject:_obj forKey:keys[i]];
+        }
+        
+        return obj;
+    } else if ([object isKindOfClass:NSString.class]) {
+        return [object stringByAppendingString:@"_null"];
+    } else {
+        return object;
+    }
 }
 @end
