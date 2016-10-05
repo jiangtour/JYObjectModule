@@ -22,6 +22,19 @@
 
 #import <Realm/Realm.h>
 
+@interface NSObject (KeyValue)
+/// Initializes an unmanaged instance of a NSObject object.
+///
+/// Pass in an NSDictionary instance to set the values of the object's properties.
+///
++ (instancetype _Nonnull)objectWithKeyValue:(NSDictionary * _Nullable)object;
+/// Get the key value object of the NSObject/RLMObject's instance.
+///
+/// @discusstion If the object if nil, this priperty will return the schema of the class.
+///
+@property(readonly, nonatomic, nonnull) NSDictionary *keyValue;
+@end
+
 @interface RLMObject (KeyValue)
 /// Initializes an unmanaged instance of a Realm object.
 ///
@@ -31,9 +44,4 @@
 ///
 /// @see `[RLMRealm addObject:]`
 + (instancetype _Nonnull)objectWithKeyValue:(NSDictionary * _Nullable)object;
-/// Get the key value object of the RLMObject's instance.
-///
-/// @discusstion If the object if nil, this priperty will return the schema of the class.
-///
-@property(readonly, nonatomic, nonnull) NSDictionary *keyValue;
 @end

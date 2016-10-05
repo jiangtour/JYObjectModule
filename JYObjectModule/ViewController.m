@@ -17,6 +17,8 @@
 #import "RLMObject+KeyValue.h"
 #import "JYClientObject.h"
 
+#import "JYUserVerifyResponseObject.h"
+
 @interface ViewController ()
 
 @end
@@ -72,6 +74,9 @@
     NSLog(@"post object: %@", [PostObject objectWithKeyValue:@{@"user":user.keyValue, @"images":@[@{@"url":@"www.baidu.com"}], @"comments":@[@{@"user":user.keyValue, @"images":@[@{@"url":@"weibo.sina.cn"}]}]}]);
     
     [JYClientObject activeClientWithUserId:[NSString stringWithFormat:@"%@", @([[NSDate date] timeIntervalSince1970]+1)]];
+    
+    JYUserVerifyResponseObject *response = [JYUserVerifyResponseObject objectWithKeyValue:@{}];
+    NSLog(@"%@%@", NSStringFromClass(JYUserVerifyResponseObject.class), response);
 }
 
 - (void)didReceiveMemoryWarning {
