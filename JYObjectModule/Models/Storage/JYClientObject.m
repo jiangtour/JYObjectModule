@@ -9,6 +9,7 @@
 #import "JYClientObject.h"
 #import "RLMObject+KeyValue.h"
 #import <Realm/Realm.h>
+#import <objc/runtime.h>
 #import <CocoaSecurity/CocoaSecurity.h>
 #import <UICKeyChainStore/UICKeyChainStore.h>
 
@@ -17,6 +18,10 @@
 
 + (void)load {
     [super load];
+}
+
++ (Class)classForUserObjects {
+    return JYUserObject.class;
 }
 
 #pragma mark - Realm support
@@ -57,9 +62,16 @@
     // Get the actived client.
     JYClientObject *activedClient = [self activedClient];
     
+    // Get the user class.
+    Class clsOfUser = [self classForUserObjects];
+    
+    NSAssert(clsOfUser != NULL, @"Class for user objects can not be NULL.");
+    NSAssert(!class_isMetaClass(clsOfUser), @"Class for user objects can not be Meta class.");
+    NSAssert(class_conformsToProtocol(clsOfUser, @protocol(JYUserObject)), @"Class for user objects must conforms to protocol <JYUserObject>.");
+    
     if (activedClient) {
         // Find actived user object from default realm.
-        JYUserObject *user = [JYUserObject objectForPrimaryKey:activedClient.userId];
+        id<JYUserObject> user = [clsOfUser objectForPrimaryKey:activedClient.userId];
         
         return user;
     }

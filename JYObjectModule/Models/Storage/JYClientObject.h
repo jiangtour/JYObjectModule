@@ -34,6 +34,12 @@
  *  Is user signed in.
  */
 @property(assign, nonatomic) BOOL actived;
+/**
+ Get the class of user object to fetch objects from realm.
+ 
+ @return a Class for user objects.
+ */
++ (Class _Nonnull)classForUserObjects;
 @end
 /*!
  *  JYClientObject
