@@ -55,6 +55,8 @@
 		01A113BC1D74827100131431 /* RLMObject+KeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A113BB1D74827100131431 /* RLMObject+KeyValue.m */; };
 		26E28937F087F5FF16E2F54D /* libPods-JYObjectModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF76E61B47DFF0171C2DC70F /* libPods-JYObjectModule.a */; };
 		DCA640D81DAF723C005FC2DE /* JYProductCrowdObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA640D71DAF723C005FC2DE /* JYProductCrowdObject.m */; };
+		DCA640DB1DAF7418005FC2DE /* JYProductSpecificationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA640DA1DAF7418005FC2DE /* JYProductSpecificationObject.m */; };
+		DCA640DE1DAF7509005FC2DE /* JYProductSpecificationGroupObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA640DD1DAF7509005FC2DE /* JYProductSpecificationGroupObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +174,10 @@
 		BF76E61B47DFF0171C2DC70F /* libPods-JYObjectModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JYObjectModule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA640D61DAF723C005FC2DE /* JYProductCrowdObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYProductCrowdObject.h; sourceTree = "<group>"; };
 		DCA640D71DAF723C005FC2DE /* JYProductCrowdObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYProductCrowdObject.m; sourceTree = "<group>"; };
+		DCA640D91DAF7418005FC2DE /* JYProductSpecificationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYProductSpecificationObject.h; sourceTree = "<group>"; };
+		DCA640DA1DAF7418005FC2DE /* JYProductSpecificationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYProductSpecificationObject.m; sourceTree = "<group>"; };
+		DCA640DC1DAF7509005FC2DE /* JYProductSpecificationGroupObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYProductSpecificationGroupObject.h; sourceTree = "<group>"; };
+		DCA640DD1DAF7509005FC2DE /* JYProductSpecificationGroupObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYProductSpecificationGroupObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +333,10 @@
 				01A1121C1D6EC85600131431 /* JYProductCategoryObject.m */,
 				DCA640D61DAF723C005FC2DE /* JYProductCrowdObject.h */,
 				DCA640D71DAF723C005FC2DE /* JYProductCrowdObject.m */,
+				DCA640D91DAF7418005FC2DE /* JYProductSpecificationObject.h */,
+				DCA640DA1DAF7418005FC2DE /* JYProductSpecificationObject.m */,
+				DCA640DC1DAF7509005FC2DE /* JYProductSpecificationGroupObject.h */,
+				DCA640DD1DAF7509005FC2DE /* JYProductSpecificationGroupObject.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -575,6 +585,7 @@
 				01A111FC1D6DDBB200131431 /* JYCommentObject.m in Sources */,
 				01A113B31D74778800131431 /* JYRealmManager.m in Sources */,
 				013423841D6C4B6700799E34 /* AppDelegate.m in Sources */,
+				DCA640DB1DAF7418005FC2DE /* JYProductSpecificationObject.m in Sources */,
 				013423811D6C4B6700799E34 /* main.m in Sources */,
 				01A112341D6FDBF200131431 /* JYAddressObject.m in Sources */,
 				01A112241D6EC94700131431 /* JYPageObject.m in Sources */,
@@ -592,6 +603,7 @@
 				01A113BC1D74827100131431 /* RLMObject+KeyValue.m in Sources */,
 				01A112551D7115AA00131431 /* UserObject.m in Sources */,
 				01A111F91D6DDAA000131431 /* JYLocationObject.m in Sources */,
+				DCA640DE1DAF7509005FC2DE /* JYProductSpecificationGroupObject.m in Sources */,
 				01A1122D1D6ECD3C00131431 /* JYCashbackObject.m in Sources */,
 				01A111FF1D6E87EC00131431 /* JYUserObject.m in Sources */,
 				01A112111D6EA6FE00131431 /* JYOrderObject.m in Sources */,
