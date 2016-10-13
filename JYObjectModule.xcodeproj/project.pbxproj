@@ -54,6 +54,7 @@
 		01A113B91D74806F00131431 /* JYClientObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A113B81D74806F00131431 /* JYClientObject.m */; };
 		01A113BC1D74827100131431 /* RLMObject+KeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A113BB1D74827100131431 /* RLMObject+KeyValue.m */; };
 		26E28937F087F5FF16E2F54D /* libPods-JYObjectModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF76E61B47DFF0171C2DC70F /* libPods-JYObjectModule.a */; };
+		DCA640D81DAF723C005FC2DE /* JYProductCrowdObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA640D71DAF723C005FC2DE /* JYProductCrowdObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +170,8 @@
 		60CC7FE29AC188273B1DD6F0 /* Pods-JYObjectModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYObjectModule.release.xcconfig"; path = "Pods/Target Support Files/Pods-JYObjectModule/Pods-JYObjectModule.release.xcconfig"; sourceTree = "<group>"; };
 		BD7ADAD0C974A780565ACC78 /* Pods-JYObjectModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYObjectModule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JYObjectModule/Pods-JYObjectModule.debug.xcconfig"; sourceTree = "<group>"; };
 		BF76E61B47DFF0171C2DC70F /* libPods-JYObjectModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JYObjectModule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCA640D61DAF723C005FC2DE /* JYProductCrowdObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYProductCrowdObject.h; sourceTree = "<group>"; };
+		DCA640D71DAF723C005FC2DE /* JYProductCrowdObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYProductCrowdObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +325,8 @@
 				01A1120A1D6E9E0400131431 /* JYPushNotificationObject.m */,
 				01A1121B1D6EC85600131431 /* JYProductCategoryObject.h */,
 				01A1121C1D6EC85600131431 /* JYProductCategoryObject.m */,
+				DCA640D61DAF723C005FC2DE /* JYProductCrowdObject.h */,
+				DCA640D71DAF723C005FC2DE /* JYProductCrowdObject.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -563,6 +568,7 @@
 			files = (
 				013423871D6C4B6700799E34 /* ViewController.m in Sources */,
 				01A112371D6FEC3D00131431 /* JYNullObject.m in Sources */,
+				DCA640D81DAF723C005FC2DE /* JYProductCrowdObject.m in Sources */,
 				01A112401D70919900131431 /* JYPreorderObject.m in Sources */,
 				01A1123A1D704EAE00131431 /* JYRewardObject.m in Sources */,
 				01A112541D7115AA00131431 /* PostObject.m in Sources */,
