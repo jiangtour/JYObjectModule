@@ -26,7 +26,7 @@
 #import "JYPreorderObject.h"
 
 @implementation JYPreorderObject
-@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, state, substate, product;
+@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, product, count;
 
 + (void)load {
     [super load];
@@ -35,7 +35,7 @@
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {
-    return [[super indexedProperties] addObjectsFromArray:@[@"state", @"substate"]];
+    return [[super indexedProperties] addObjectsFromArray:@[@"count"]];
 }
 + (nullable NSDictionary *)defaultPropertyValues
 {
