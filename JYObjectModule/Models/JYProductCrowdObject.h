@@ -26,7 +26,7 @@
 #import "JYObject.h"
 
 /**
- Crowd object.
+ Crowd object protocol.
  */
 @protocol JYProductCrowdObject <JYObject>
 /**
@@ -47,5 +47,8 @@
 @property(copy, nonatomic, nullable) NSString *statements;
 @end
 
+/**
+ Crowd object.
+ */
 @interface JYProductCrowdObject : JYRLMObject <JYProductCrowdObject>
 @end
