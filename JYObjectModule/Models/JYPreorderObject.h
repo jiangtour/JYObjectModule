@@ -23,11 +23,20 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import "JYOrderObject.h"
+#import "JYObject.h"
+#import "JYProductObject.h"
 /*!
  *  Preorder object protocol.
  */
-@protocol JYPreorderObject <JYOrderObject>
+@protocol JYPreorderObject <JYObject>
+/**
+ Product object of preorder.
+ */
+@property(strong, nonatomic, nonnull) id<JYProductObject> product;
+/**
+ Count of the product.
+ */
+@property(assign, nonatomic) int64_t count;
 @end
 /*!
  *  JYPreorderObject.
