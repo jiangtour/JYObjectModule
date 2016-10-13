@@ -27,6 +27,8 @@
 #import "JYImageObject.h"
 #import "JYIntegerObject.h"
 #import "JYProductCategoryObject.h"
+#import "JYProductSpecificationObject.h"
+#import "JYProductSpecificationGroupObject.h"
 /*!
  *  Product object protocol.
  */
@@ -40,6 +42,10 @@
  *  Substate of product object.
  */
 @property(assign, nonatomic) int64_t substate;
+/*!
+ *  Characteristics of product object.
+ */
+@property(assign, nonatomic) int64_t characteristics;
 /*!
  *  Product detail url of product object.
  */
@@ -61,13 +67,17 @@
  */
 @property(strong, nonatomic, nullable) RLMArray<JYImageObject> *images;
 /*!
- *  Characteristics of product object.
- */
-@property(strong, nonatomic, nullable) RLMArray<JYIntegerObject> *characteristics;
-/*!
  *  Categories of product object.
  */
 @property(strong, nonatomic, nullable) RLMArray<JYProductCategoryObject> *categories;
+/**
+ Specifications of product.
+ */
+@property(strong, nonatomic, nullable) RLMArray<JYProductSpecificationObject> *specifications;
+/**
+ Specification groups of product.
+ */
+@property(strong, nonatomic, nullable) RLMArray<JYProductSpecificationGroupObject> *specificationGroups;
 @end
 /*!
  *  JYProductObject.
@@ -78,11 +88,15 @@
  */
 @property(strong, nonatomic, nullable) RLMArray<__kindof JYImageObject *><JYImageObject> *images;
 /*!
- *  Characteristics of product object.
- */
-@property(strong, nonatomic, nullable) RLMArray<__kindof JYIntegerObject *><JYIntegerObject> *characteristics;
-/*!
  *  Categories of product object.
  */
 @property(strong, nonatomic, nullable) RLMArray<__kindof JYProductCategoryObject *><JYProductCategoryObject> *categories;
+/**
+ Specifications of product.
+ */
+@property(strong, nonatomic, nullable) RLMArray<__kindof JYProductSpecificationObject*><JYProductSpecificationObject> *specifications;
+/**
+ Specification groups of product.
+ */
+@property(strong, nonatomic, nullable) RLMArray<__kindof JYProductSpecificationGroupObject*><JYProductSpecificationGroupObject> *specificationGroups;
 @end
