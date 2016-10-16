@@ -46,4 +46,8 @@
  Specification object.
  */
 @interface JYProductSpecificationObject : JYRLMObject <JYProductSpecificationObject>
+/*!
+ *  Children of specification object.
+ */
+@property(strong, nonatomic, nullable) RLMArray<JYProductSpecificationObject> *children;
 @end
