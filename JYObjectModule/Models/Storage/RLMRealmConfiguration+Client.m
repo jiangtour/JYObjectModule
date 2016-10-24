@@ -41,8 +41,23 @@
 
 + (NSString *)realmPath
 {
+    // Get the client class.
+    Class clsOfClient = [self classForClient];
+    
+    NSAssert(clsOfClient != NULL, @"Class for client can not be NULL.");
+    NSAssert(!class_isMetaClass(clsOfClient), @"Class for client can not be Meta class.");
+    Class superCls = clsOfClient;
+    while (superCls != NULL && clsOfClient!=JYClientObject.class && !class_isMetaClass(superCls)) {
+        if (class_conformsToProtocol(superCls, @protocol(JYClientObject))) {
+            break;
+        } else {
+            superCls = class_getSuperclass(clsOfClient);
+        }
+    }
+    NSAssert(class_conformsToProtocol(superCls, @protocol(JYClientObject)), @"Class for client must conforms to protocol <JYClientObject>.");
+    
     // Get the actived user object.
-    id<JYUserObject> user = JYClientObject.activedUser;
+    id<JYUserObject> user = [clsOfClient activedUser];
     if (!user) {
         return nil;
     }
@@ -54,8 +69,23 @@
 }
 
 + (NSString *)realmDir {
+    // Get the client class.
+    Class clsOfClient = [self classForClient];
+    
+    NSAssert(clsOfClient != NULL, @"Class for client can not be NULL.");
+    NSAssert(!class_isMetaClass(clsOfClient), @"Class for client can not be Meta class.");
+    Class superCls = clsOfClient;
+    while (superCls != NULL && clsOfClient!=JYClientObject.class && !class_isMetaClass(superCls)) {
+        if (class_conformsToProtocol(superCls, @protocol(JYClientObject))) {
+            break;
+        } else {
+            superCls = class_getSuperclass(clsOfClient);
+        }
+    }
+    NSAssert(class_conformsToProtocol(superCls, @protocol(JYClientObject)), @"Class for client must conforms to protocol <JYClientObject>.");
+    
     // Get the actived user object.
-    id<JYUserObject> user = JYClientObject.activedUser;
+    id<JYUserObject> user = [clsOfClient activedUser];
     if (!user) {
         return nil;
     }
@@ -76,5 +106,9 @@
         }
     }
     return dir;
+}
+
++ (Class)classForClient {
+    return JYClientObject.class;
 }
 @end

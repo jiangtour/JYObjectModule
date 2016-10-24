@@ -40,6 +40,12 @@
  @return a Class for user objects.
  */
 + (Class _Nonnull)classForUserObjects;
+/**
+ Get the class of client object to fetch objects from realm.
+ 
+ @return a Class for client object.
+ */
++ (Class _Nonnull)classForClient;
 @end
 /*!
  *  JYClientObject

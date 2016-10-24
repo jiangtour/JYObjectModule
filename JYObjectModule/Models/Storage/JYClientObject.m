@@ -24,6 +24,10 @@
     return JYUserObject.class;
 }
 
++ (Class)classForClient {
+    return self.class;
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {
@@ -48,8 +52,23 @@
 
 #pragma mark - Public interface
 + (instancetype _Nullable)activedClient {
+    // Get the client class.
+    Class clsOfClient = [self classForClient];
+    
+    NSAssert(clsOfClient != NULL, @"Class for client can not be NULL.");
+    NSAssert(!class_isMetaClass(clsOfClient), @"Class for client can not be Meta class.");
+    Class superCls = clsOfClient;
+    while (superCls != NULL && clsOfClient!=JYClientObject.class && !class_isMetaClass(superCls)) {
+        if (class_conformsToProtocol(superCls, @protocol(JYClientObject))) {
+            break;
+        } else {
+            superCls = class_getSuperclass(clsOfClient);
+        }
+    }
+    NSAssert(class_conformsToProtocol(superCls, @protocol(JYClientObject)), @"Class for client must conforms to protocol <JYClientObject>.");
+    
     // Find the actived client object from default realm.
-    RLMResults *clientRes = [JYClientObject objectsWhere:@"actived = %@", @(YES)];
+    RLMResults *clientRes = [clsOfClient objectsWhere:@"actived = %@ AND index = 1", @(YES)];
     
     if (clientRes && clientRes.count == 1) {
         return [clientRes firstObject];
@@ -67,7 +86,15 @@
     
     NSAssert(clsOfUser != NULL, @"Class for user objects can not be NULL.");
     NSAssert(!class_isMetaClass(clsOfUser), @"Class for user objects can not be Meta class.");
-    NSAssert(class_conformsToProtocol(clsOfUser, @protocol(JYUserObject)), @"Class for user objects must conforms to protocol <JYUserObject>.");
+    Class superCls = clsOfUser;
+    while (superCls != NULL && clsOfUser!=JYUserObject.class && !class_isMetaClass(superCls)) {
+        if (class_conformsToProtocol(superCls, @protocol(JYUserObject))) {
+            break;
+        } else {
+            superCls = class_getSuperclass(clsOfUser);
+        }
+    }
+    NSAssert(class_conformsToProtocol(superCls, @protocol(JYUserObject)), @"Class for client must conforms to protocol <JYUserObject>.");
     
     if (activedClient) {
         // Find actived user object from default realm.
@@ -84,11 +111,26 @@
     
     BOOL clientStored = NO;
     
-    RLMResults *allClients = [JYClientObject allObjects];
+    // Get the client class.
+    Class clsOfClient = [self classForClient];
+    
+    NSAssert(clsOfClient != NULL, @"Class for client can not be NULL.");
+    NSAssert(!class_isMetaClass(clsOfClient), @"Class for client can not be Meta class.");
+    Class superCls = clsOfClient;
+    while (superCls != NULL && clsOfClient!=JYClientObject.class && !class_isMetaClass(superCls)) {
+        if (class_conformsToProtocol(superCls, @protocol(JYClientObject))) {
+            break;
+        } else {
+            superCls = class_getSuperclass(clsOfClient);
+        }
+    }
+    NSAssert(class_conformsToProtocol(superCls, @protocol(JYClientObject)), @"Class for client must conforms to protocol <JYClientObject>.");
+    
+    RLMResults *allClients = [clsOfClient allObjects];
     
     for (int i = 0; i < allClients.count; i++) {
         // Get client.
-        JYClientObject *client = allClients[i];
+        JYRLMObject<JYClientObject> *client = allClients[i];
         
         if ([client.userId isEqualToString:userId] && [client.objectId isEqualToString:userId]) {
             // Client is stored.
@@ -118,7 +160,7 @@
     
     if (!clientStored) {
         // Create a new client object.
-        JYClientObject *client = [JYClientObject objectWithKeyValue:@{@"objectId":userId, @"userId":userId, @"index":@1, @"atUpdation":@([[NSDate date] timeIntervalSince1970]), @"atCreation":@([[NSDate date] timeIntervalSince1970]), @"actived":@1}];
+        JYRLMObject<JYClientObject> *client = [clsOfClient objectWithKeyValue:@{@"objectId":userId, @"userId":userId, @"index":@1, @"atUpdation":@([[NSDate date] timeIntervalSince1970]), @"atCreation":@([[NSDate date] timeIntervalSince1970]), @"actived":@1}];
         //
         RLMRealm *realm = [RLMRealm defaultRealm];
         [realm beginWriteTransaction];
@@ -128,8 +170,23 @@
 }
 
 + (BOOL)unactiveClientWithUserId:(NSString * _Nonnull)userId {
+    // Get the client class.
+    Class clsOfClient = [self classForClient];
+    
+    NSAssert(clsOfClient != NULL, @"Class for client can not be NULL.");
+    NSAssert(!class_isMetaClass(clsOfClient), @"Class for client can not be Meta class.");
+    Class superCls = clsOfClient;
+    while (superCls != NULL && clsOfClient!=JYClientObject.class && !class_isMetaClass(superCls)) {
+        if (class_conformsToProtocol(superCls, @protocol(JYClientObject))) {
+            break;
+        } else {
+            superCls = class_getSuperclass(clsOfClient);
+        }
+    }
+    NSAssert(class_conformsToProtocol(superCls, @protocol(JYClientObject)), @"Class for client must conforms to protocol <JYClientObject>.");
+    
     // Get client stored if exits.
-    JYClientObject *client = [JYClientObject objectForPrimaryKey:userId];
+    JYRLMObject<JYClientObject> *client = [clsOfClient objectForPrimaryKey:userId];
     // unactive client if client object exits in realm.
     if (client) {
         [client.realm beginWriteTransaction];

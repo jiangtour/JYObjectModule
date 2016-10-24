@@ -29,4 +29,6 @@
 + (instancetype)currentConfiguration;
 + (NSString *)realmPath;
 + (NSString *)realmDir;
+
++ (Class)classForClient;
 @end
