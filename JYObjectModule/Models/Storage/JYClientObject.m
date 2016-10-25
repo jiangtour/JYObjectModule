@@ -143,7 +143,7 @@
                 [client.realm commitWriteTransaction];
             } else {
                 [client.realm beginWriteTransaction];
-                clientStored = YES;
+                client.actived = YES;
                 client.index = 1;
                 client.atUpdation = [[NSDate date] timeIntervalSince1970];
                 [client.realm commitWriteTransaction];
