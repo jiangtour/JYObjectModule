@@ -26,7 +26,7 @@
 #import "JYChargeObject.h"
 
 @implementation JYChargeObject
-@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, amount, type, subtype, channel;
+@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, amount, type, subtype, channel, statements;
 
 + (void)load {
     [super load];
@@ -35,7 +35,7 @@
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {
-    return [[super indexedProperties] addObjectsFromArray:@[@"amount", @"type", @"subtype", @"channel"]];
+    return [[super indexedProperties] addObjectsFromArray:@[@"amount", @"type", @"subtype", @"channel", @"statements"]];
 }
 + (nullable NSDictionary *)defaultPropertyValues
 {

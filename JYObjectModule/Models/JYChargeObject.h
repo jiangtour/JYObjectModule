@@ -45,6 +45,10 @@
  *  Channel of charge object.
  */
 @property(assign, nonatomic) int64_t channel;
+/*!
+ *  Statements of charge object.
+ */
+@property(copy, nonatomic) NSString *statements;
 @end
 /*!
  *  JYChargeObject.
