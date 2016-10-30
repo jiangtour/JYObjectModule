@@ -206,6 +206,12 @@
     [UICKeyChainStore setString:token forKey:[self.activedClient userId]];
 }
 
++ (NSString *)tokenForActivedClient {
+    NSString *activedUserId = [self.activedClient userId];
+    if (!activedUserId) return nil;
+    return [UICKeyChainStore stringForKey:activedUserId];
+}
+
 + (void)storeEtag:(NSString *)etag forEtagFlag:(NSString *)etagFlag {
     [UICKeyChainStore setString:etag forKey:[@"etag" stringByAppendingString:etagFlag]];
 }
