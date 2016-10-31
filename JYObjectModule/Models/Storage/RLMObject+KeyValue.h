@@ -22,6 +22,11 @@
 
 #import <Realm/Realm.h>
 
+extern NSString * _Nonnull const JYKeyValueObjectPlaceholder;
+extern int64_t             const JYKeyValueIntPlaceholder;
+extern float               const JYKeyValueFloatPlaceholder;
+extern double              const JYKeyValueDoublePlaceholder;
+
 @interface NSObject (KeyValue)
 /// Initializes an unmanaged instance of a NSObject object.
 ///

@@ -24,6 +24,11 @@
 #import <MJExtension/MJExtension.h>
 #import <objc/runtime.h>
 
+NSString *const JYKeyValueObjectPlaceholder = @"__placeholder";
+int64_t const JYKeyValueIntPlaceholder = -1001;
+float const JYKeyValueFloatPlaceholder = -1001.0;
+double const JYKeyValueDoublePlaceholder = JYKeyValueFloatPlaceholder;
+
 @implementation NSObject (KeyValue)
 
 - (NSDictionary *)keyValue {
@@ -59,7 +64,7 @@
             if (obj) {
                 schema[key] = obj;
             } else {
-                schema[key] = @"__unspecified";
+                schema[key] = JYKeyValueObjectPlaceholder;
             }
         }
     }
@@ -206,13 +211,17 @@
                 case 'i':   // int
                 case 'l':   // long
                 case 'q':   // long long
+                    properiesInfo[name]=@(JYKeyValueIntPlaceholder);
+                    break;
                 case 'f':   // float
+                    properiesInfo[name]=@(JYKeyValueFloatPlaceholder);
+                    break;
                 case 'd':   // double
-                    properiesInfo[name]=@(-1001);
+                    properiesInfo[name]=@(JYKeyValueDoublePlaceholder);
                     break;
                 case 'c':   // BOOL is stored as char - since rlm has no char type this is ok
                 case 'B':   // BOOL
-                    properiesInfo[name]=@(0);
+                    properiesInfo[name]=@(JYKeyValueIntPlaceholder);
                     break;
                 default:
                 {
@@ -225,11 +234,11 @@
                     NSString *_objectClassName;
                     
                     if (strcmp(code, "NSString") == 0) { // NSString
-                        properiesInfo[name]=@"__unspecified";
+                        properiesInfo[name]=JYKeyValueObjectPlaceholder;
                     } else if (strcmp(code, "NSDate") == 0) { // NSDate
                         properiesInfo[name]=[NSDate dateWithTimeIntervalSince1970:0];
                     } else if (strcmp(code, "NSData") == 0) { // NSData
-                        properiesInfo[name]=[@"__unspecified" dataUsingEncoding:NSUTF8StringEncoding];
+                        properiesInfo[name]=[JYKeyValueObjectPlaceholder dataUsingEncoding:NSUTF8StringEncoding];
                     } else if (strncmp(code, arrayPrefix, arrayPrefixLen) == 0) { // RLMPropertyTypeArray
                         // get object class from type string - @"RLMArray<objectClassName>"
                         _objectClassName = [[NSString alloc] initWithBytes:code + arrayPrefixLen length:strlen(code + arrayPrefixLen) - 1 // drop trailing >"
@@ -249,13 +258,13 @@
                                                                       encoding:NSUTF8StringEncoding];
                         
                         if ([numberType isEqualToString:@"RLMInt"]) { // RLMInt
-                            properiesInfo[name]=@(-1001);
+                            properiesInfo[name]=@(JYKeyValueIntPlaceholder);
                         } else if ([numberType isEqualToString:@"RLMFloat"]) { // RLMFloat
-                            properiesInfo[name]=@(-1001);
+                            properiesInfo[name]=@(JYKeyValueFloatPlaceholder);
                         } else if ([numberType isEqualToString:@"RLMDouble"]) { // RLMDouble
-                            properiesInfo[name]=@(-1001);
+                            properiesInfo[name]=@(JYKeyValueDoublePlaceholder);
                         } else if ([numberType isEqualToString:@"RLMBool"]) { // RLMBool
-                            properiesInfo[name]=@(-1001);
+                            properiesInfo[name]=@(JYKeyValueIntPlaceholder);
                         } else {
                             [NSException raise:RLMExceptionName format:@"Property '%@' is of type 'NSNumber<%@>' which is not a supported NSNumber object type.\nNSNumbers can only be RLMInt, RLMFloat, RLMDouble, and RLMBool at the moment.See https://realm.io/docs/objc/latest for more information.", name, property.type.code];
                         }
@@ -385,7 +394,7 @@
             if (obj) {
                 schema[key] = obj;
             } else {
-                schema[key] = @"__unspecified";
+                schema[key] = JYKeyValueObjectPlaceholder;
             }
         }
     }

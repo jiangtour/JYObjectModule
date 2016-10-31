@@ -32,6 +32,10 @@
     [super load];
 }
 
+- (BOOL)available {
+    return ![[NSPredicate predicateWithFormat:@"SELF CONTAINS[cd] '__placeholder'"] evaluateWithObject:self.objectId];
+}
+
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {
