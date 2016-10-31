@@ -26,7 +26,7 @@
 #import "JYIncomeObject.h"
 
 @implementation JYIncomeObject
-@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, amount, type, subtype, channel;
+@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, amount, type, subtype, channel, statements;
 
 + (void)load {
     [super load];
