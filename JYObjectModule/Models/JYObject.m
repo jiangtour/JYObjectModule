@@ -26,7 +26,7 @@
 #import "JYObject.h"
 
 @implementation JYObject
-@synthesize objectId, userId, index, atUpdation, atCreation, descriptions;
+@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, available;
 
 + (void)load {
     [super load];
