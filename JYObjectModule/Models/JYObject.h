@@ -72,10 +72,6 @@
  *  Descriptions of object.
  */
 @property(copy, nonatomic, nullable) NSString *descriptions;
-/*!
- *  Is the object available.
- */
-@property(readonly, nonatomic) BOOL available;
 @end
 /*!
  *  JYObject.

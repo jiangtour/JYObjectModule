@@ -26,14 +26,10 @@
 #import "JYObject.h"
 
 @implementation JYObject
-@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, available;
+@synthesize objectId, userId, index, atUpdation, atCreation, descriptions;
 
 + (void)load {
     [super load];
-}
-
-- (BOOL)available {
-    return ![[NSPredicate predicateWithFormat:@"SELF CONTAINS[cd] '__placeholder'"] evaluateWithObject:self.objectId];
 }
 
 #pragma mark - Realm support

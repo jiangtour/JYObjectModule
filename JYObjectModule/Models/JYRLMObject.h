@@ -24,6 +24,10 @@
  */
 @interface JYRLMObject : RLMObject
 /*!
+ *  Is the object available.
+ */
+@property(readonly, nonatomic) BOOL available;
+/*!
  *  Should store the object to Realm database. Default is YES.
  *
  *  @return a boolean value.

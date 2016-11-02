@@ -23,6 +23,15 @@
 + (void)load {
 }
 
+- (BOOL)available {
+    if ([self conformsToProtocol:@protocol(JYObject)] && [self respondsToSelector:@selector(objectId)]) {
+        if (![[NSPredicate predicateWithFormat:@"SELF CONTAINS[cd] '__placeholder' OR SELF MATCHES[cd] '__placeholder'"] evaluateWithObject:[self valueForKeyPath:@"objectId"]]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 + (BOOL)shouldStoreToRealm {
     return YES;
 }
