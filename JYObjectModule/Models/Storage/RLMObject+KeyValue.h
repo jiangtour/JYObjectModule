@@ -38,6 +38,9 @@ extern double              const JYKeyValueDoublePlaceholder;
 /// @discusstion If the object if nil, this priperty will return the schema of the class.
 ///
 @property(readonly, nonatomic, nonnull) NSDictionary *keyValue;
+/// Get the object for the object class.
+///
++ (RLMObject *_Nullable)resolvedObjectForObjectClass:(Class _Nonnull)objCls withKayValue:(NSDictionary *_Nonnull)keyValue;
 @end
 
 @interface RLMObject (KeyValue)

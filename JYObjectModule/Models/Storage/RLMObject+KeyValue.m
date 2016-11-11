@@ -121,7 +121,7 @@ double const JYKeyValueDoublePlaceholder = JYKeyValueFloatPlaceholder;
                         [[newObject valueForKey:key] addObject:childObject];
                     }
                 } else {
-                    return [[self alloc] initWithValue:object];
+                    return [self objectWithKeyValue:object];
                 }
             }
         } else if ([obj isKindOfClass:[NSDictionary class]]) { // NSObject.
@@ -132,7 +132,7 @@ double const JYKeyValueDoublePlaceholder = JYKeyValueFloatPlaceholder;
             // Set child object to father object.
             [newObject setValue:childObject forKey:key];
         } else {
-            return [[self alloc] initWithValue:object];
+            return [self objectWithKeyValue:object];
         }
     }
     return newObject;
@@ -221,7 +221,7 @@ double const JYKeyValueDoublePlaceholder = JYKeyValueFloatPlaceholder;
                     break;
                 case 'c':   // BOOL is stored as char - since rlm has no char type this is ok
                 case 'B':   // BOOL
-                    properiesInfo[name]=@(JYKeyValueIntPlaceholder);
+                    properiesInfo[name]=@(0);
                     break;
                 default:
                 {
@@ -358,6 +358,10 @@ double const JYKeyValueDoublePlaceholder = JYKeyValueFloatPlaceholder;
     }
 }
 
++ (RLMObject *)resolvedObjectForObjectClass:(Class)objCls withKayValue:(NSDictionary *)keyValue {
+    return [objCls objectWithKeyValue:keyValue];
+}
+
 @end
 
 @implementation RLMObject (KeyValue)
@@ -458,7 +462,7 @@ double const JYKeyValueDoublePlaceholder = JYKeyValueFloatPlaceholder;
             // Get property.
             MJProperty *property = [MJProperty cachedPropertyWithProperty:class_getProperty(self, [key UTF8String])];
             // Initialize a new RLMObject.
-            RLMObject *childObject = [property.type.typeClass objectWithKeyValue:obj];
+            RLMObject *childObject = [self resolvedObjectForObjectClass:property.type.typeClass withKayValue:obj];
             // Set child object to father object.
             [newObject setValue:childObject forKey:key];
         } else {
