@@ -32,6 +32,12 @@
 #ifndef JY_Realm
 #define JY_Realm (JY_RealmManager.currentRealm)
 #endif
+#ifndef JY_REALM_SERIAL_QUEUE
+#define JY_REALM_SERIAL_QUEUE (JY_RealmManager.serialQueue)
+#endif
+#ifndef JY_REALM_CONCURRENT_QUEUE
+#define JY_REALM_CONCURRENT_QUEUE (JY_RealmManager.concurrentQueue)
+#endif
 #ifndef JYEXECUTE_ON_M_T
 #define JYEXECUTE_ON_M_T(block) \
 if ([NSThread isMainThread]) {\
@@ -52,13 +58,40 @@ typedef void(^JYRealmWriteTransactionCompletionBlock)(NSError * _Nullable error)
 @property(readonly, nonatomic) RLMRealm *memoryRealm;
 /// Last error
 @property(readonly, nonatomic) NSError *error;
-/// Transaction queue
-@property(readonly, nonatomic) dispatch_queue_t queue;
+/// Transaction serial queue.
+@property(readonly, nonatomic) dispatch_queue_t serialQueue;
+/// Transaction concurrent queue.
+@property(readonly, nonatomic) dispatch_queue_t concurrentQueue;
 
 + (instancetype)sharedManager;
-
-- (void)beginWriteTransaction:(nonnull JYRealmWriteTransactionBlock)transaction __deprecated_msg("using 'beginTransaction:' method instead.");
+/// Begin transaction using async method in user realm.
+///
+/// @param transaction writing transaction block.
 - (void)beginTransaction:(nonnull JYRealmWriteTransactionBlock)transaction;
+/// Begin transaction using async method with completion block in user realm.
+///
+/// @param transaction writing transaction block.
+/// @param completion completion block.
 - (void)beginTransaction:(nonnull JYRealmWriteTransactionBlock)transaction completion:(nullable JYRealmWriteTransactionCompletionBlock)completion;
+/// Async transaction with completion in user realm.
+///
+/// @param transaction writing transaction block.
+/// @param completion completion block.
+- (void)asynsTransaction:(nonnull JYRealmWriteTransactionBlock)transaction completion:(nullable JYRealmWriteTransactionCompletionBlock)completion;
+/// Async transaction with completion.
+///
+/// @param transaction writing transaction block.
+/// @param realm realm to begin transactin.
+/// @param completion completion block.
+- (void)asynsTransaction:(nonnull JYRealmWriteTransactionBlock)transaction inRealm:(RLMRealm *_Nullable)realm completion:(nullable JYRealmWriteTransactionCompletionBlock)completion;
+/// Sync transaction with completion in user realm.
+///
+/// @param transaction writing transaction block.
+- (void)syncTransaction:(nonnull JYRealmWriteTransactionBlock)transaction;
+/// Sync transaction with completion.
+///
+/// @param transaction writing transaction block.
+/// @param realm realm to begin transactin.
+- (void)syncTransaction:(nonnull JYRealmWriteTransactionBlock)transaction inRealm:(RLMRealm *_Nullable)realm;
 @end
 NS_ASSUME_NONNULL_END

@@ -26,9 +26,12 @@
 #import <Realm/RLMRealmConfiguration.h>
 
 @interface RLMRealmConfiguration (Client)
+/// Get the configuration of user realm.
 + (instancetype)currentConfiguration;
+/// Path of user realm.
 + (NSString *)realmPath;
+/// Dir of realm path.
 + (NSString *)realmDir;
-
+/// Class for client object.
 + (Class)classForClient;
 @end

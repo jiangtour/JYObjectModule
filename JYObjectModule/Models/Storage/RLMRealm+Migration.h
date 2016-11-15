@@ -26,7 +26,10 @@
 #import <Realm/Realm.h>
 
 @interface RLMRealm (Migration)
+/// Get the current schema version.
 + (uint64_t)schemaVersion;
+/// Migration block for realm.
 + (RLMMigrationBlock)migrationBlock;
+/// Call migration block.
 + (void)realmMigration;
 @end

@@ -30,5 +30,9 @@ typedef void(^JYClearCacheCompletionCall)(NSInteger size);
 
 @interface RLMRealm (DataHandler)
 /// Clear cache.
-+ (void)clearCache:(JYShouldClearCacheCall)shouldClear completion:(JYClearCacheCompletionCall)completion;
++ (void)clearCache:(JYShouldClearCacheCall)shouldClear completion:(JYClearCacheCompletionCall)completion __deprecated;
+/// Calculate cached size of realm data base and SDWebImageCache.
++ (void)calculateCacheSizeIgnoreDefaultRealm:(BOOL)ignore completion:(void(^)(NSInteger size, NSError *error))completion;
+/// Clear cache of realm data base.
++ (void)clearUserCacheCompletion:(void(^)(NSError *error))completion;
 @end

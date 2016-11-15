@@ -27,15 +27,10 @@
 #import "RLMRealmConfiguration+Client.h"
 
 @interface JYRealmManager()
-{
-    dispatch_queue_t _queue;
-    RLMRealm *_memoryRealm;
-}
-@property(strong, nonatomic) NSOperationQueue *operationQueue;
-@property(strong, nonatomic) NSBlockOperation *operation;
 @end
 
 @implementation JYRealmManager
+@synthesize memoryRealm=_memoryRealm, serialQueue=_serialQueue, concurrentQueue=_concurrentQueue;
 + (instancetype)sharedManager {
     static id _sharedInstance = nil;
     static dispatch_once_t oncePredicate;
@@ -47,10 +42,8 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _operationQueue = [[NSOperationQueue alloc] init];
-        _operationQueue.maxConcurrentOperationCount = 1;
-        _operationQueue.name = @"com.realm.transaction.vivian";
-        _queue = dispatch_queue_create("com.realm.transaction.vivian", DISPATCH_QUEUE_SERIAL);
+        _serialQueue = dispatch_queue_create("com.jiangyou.realm.transaction.serial", DISPATCH_QUEUE_SERIAL);
+        _concurrentQueue = dispatch_queue_create("com.jiangyou.realm.transaction.concurrent", DISPATCH_QUEUE_CONCURRENT);
     }
     return self;
 }
@@ -72,20 +65,6 @@
     return _memoryRealm;
 }
 
-- (void)beginWriteTransaction:(JYRealmWriteTransactionBlock)transaction
-{
-    NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-        RLMRealm *realm = self.currentRealm;
-        if (transaction) {
-            [realm beginWriteTransaction];
-            transaction(realm);
-            NSError *error;
-            [realm commitWriteTransaction:&error];
-        }
-    }];
-    [_operationQueue addOperation:operation];
-}
-
 - (void)beginTransaction:(JYRealmWriteTransactionBlock)transaction
 {
     [self beginTransaction:transaction completion:nil];
@@ -93,9 +72,46 @@
 
 - (void)beginTransaction:(JYRealmWriteTransactionBlock)transaction completion:(JYRealmWriteTransactionCompletionBlock)completion
 {
-    dispatch_async(_queue, ^{
+    [self asynsTransaction:transaction completion:completion];
+}
+
+- (void)syncTransaction:(JYRealmWriteTransactionBlock)transaction {
+    [self syncTransaction:transaction inRealm:self.currentRealm];
+}
+
+- (void)syncTransaction:(JYRealmWriteTransactionBlock)transaction inRealm:(RLMRealm * _Nullable)realm {
+    dispatch_sync(_concurrentQueue, ^{
         @autoreleasepool {
-            RLMRealm *realm = self.currentRealm;
+            @try {
+                [realm beginWriteTransaction];
+                if (transaction) {
+                    transaction(realm);
+                }
+                NSError *error;
+                [realm commitWriteTransaction:&error];
+            }
+            @catch (NSException *exception) {
+                NSLog(@"realm数据库写入失败，异常信息：%@", exception);
+            }
+            @finally {
+                if (realm.inWriteTransaction) {
+                    [realm commitWriteTransaction];
+                }
+                if (!realm.autorefresh) {
+                    [realm refresh];
+                }
+            }
+        }
+    });
+}
+
+- (void)asynsTransaction:(JYRealmWriteTransactionBlock)transaction completion:(JYRealmWriteTransactionCompletionBlock)completion {
+    [self asynsTransaction:transaction inRealm:self.currentRealm completion:completion];
+}
+
+- (void)asynsTransaction:(JYRealmWriteTransactionBlock)transaction inRealm:(RLMRealm *)realm completion:(JYRealmWriteTransactionCompletionBlock)completion {
+    dispatch_async(_serialQueue, ^{
+        @autoreleasepool {
             @try {
                 [realm beginWriteTransaction];
                 if (transaction) {

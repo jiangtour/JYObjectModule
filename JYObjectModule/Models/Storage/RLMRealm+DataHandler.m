@@ -89,4 +89,84 @@
         }];
     });
 }
+
++ (void)calculateCacheSizeIgnoreDefaultRealm:(BOOL)ignore completion:(void (^)(NSInteger, NSError *))completion {
+    // Calculate the size of realm file system.
+    // Calculate in background.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        // Get realm file url.
+        NSURL *url = [NSURL fileURLWithPath:[RLMRealmConfiguration realmDir] isDirectory:YES];
+        NSUInteger totalSize = 0;
+        
+        NSError *error;
+        
+        totalSize += [self sizeForFilesInFileURL:url error:&error];
+        
+        if (!ignore) {
+            NSNumber *fileSize;
+            [[RLMRealmConfiguration defaultConfiguration].fileURL getResourceValue:&fileSize forKey:NSURLFileSizeKey error:&error];
+            totalSize += [fileSize unsignedIntegerValue];
+        }
+        
+        totalSize += [self sizeForFilesInFileURL:[NSURL URLWithString:NSTemporaryDirectory()] error:&error];
+        
+        totalSize += [SDWebImageManager.sharedManager.imageCache getSize];
+        
+        if (completion) {dispatch_async(dispatch_get_main_queue(), ^{completion(totalSize, error);});}
+    });
+}
+
++ (void)clearUserCacheCompletion:(void (^)(NSError *))completion {
+    [SDWebImageManager.sharedManager.imageCache clearDisk];
+    NSError *error;
+    for (NSString *path in [[[NSFileManager defaultManager] contentsOfDirectoryAtPath:NSTemporaryDirectory() error:NULL] copy]) {
+        [[NSFileManager defaultManager] removeItemAtPath:[NSTemporaryDirectory() stringByAppendingPathComponent:path] error:&error];
+    }
+    [self makeCopyVersionsOfRealm:JY_Realm];
+    [self makeCopyVersionsOfRealm:[RLMRealm defaultRealm]];
+    dispatch_sync(kESHTTPClient.realmTransactionQueue, ^{
+        RLMRealm *realm = JY_Realm;
+        [realm beginWriteTransaction];
+        [realm deleteAllObjects];
+        [realm commitWriteTransaction];
+        [realm refresh];
+    });
+    if (completion) completion(error);
+}
+
++ (NSInteger)sizeForFilesInFileURL:(NSURL *)fileURL error:(NSError **)error {
+    NSUInteger totalSize = 0;
+    
+    NSDirectoryEnumerator *fileEnumerator = [[NSFileManager defaultManager] enumeratorAtURL:fileURL includingPropertiesForKeys:@[NSFileSize] options:NSDirectoryEnumerationSkipsHiddenFiles errorHandler:^BOOL(NSURL * _Nonnull url, NSError * _Nonnull error) {
+        return YES;
+    }];
+    
+    for (NSURL *fileURL in fileEnumerator) {
+        NSNumber *fileSize;
+        [fileURL getResourceValue:&fileSize forKey:NSURLFileSizeKey error:error];
+        totalSize += [fileSize unsignedIntegerValue];
+    }
+    
+    return totalSize;
+}
+
++ (void)makeCopyVersionsOfRealm:(RLMRealm *)realm {
+    NSURL *realmFileURL = realm.configuration.fileURL;
+    NSString *tmpRealmPath = [realm.configuration.fileURL.relativePath stringByDeletingLastPathComponent];
+    
+    [realm writeCopyToURL:[NSURL fileURLWithPath:[tmpRealmPath stringByAppendingPathComponent:@"_copy.realm"]] encryptionKey:nil error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:[realmFileURL relativePath] error:nil];
+    
+    RLMRealm *copy = [RLMRealm realmWithURL:[NSURL fileURLWithPath:[tmpRealmPath stringByAppendingPathComponent:@"_copy.realm"]]];
+    [copy writeCopyToURL:realmFileURL encryptionKey:nil error:nil];
+    
+    [[NSFileManager defaultManager] removeItemAtPath:[tmpRealmPath stringByAppendingPathComponent:@"_copy.realm"] error:nil];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:[tmpRealmPath stringByAppendingPathComponent:@"_copy.realm.lock"]]) {
+        [[NSFileManager defaultManager] removeItemAtPath:[tmpRealmPath stringByAppendingPathComponent:@"_copy.realm.lock"] error:nil];
+    }
+    if ([[NSFileManager defaultManager] fileExistsAtPath:[tmpRealmPath stringByAppendingPathComponent:@"_copy.realm.management/"]]) {
+        [[NSFileManager defaultManager] removeItemAtPath:[tmpRealmPath stringByAppendingPathComponent:@"_copy.realm.management/"] error:nil];
+    }
+}
 @end
