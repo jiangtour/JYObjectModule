@@ -124,7 +124,7 @@
     }
     [self makeCopyVersionsOfRealm:JY_Realm];
     [self makeCopyVersionsOfRealm:[RLMRealm defaultRealm]];
-    dispatch_sync(kESHTTPClient.realmTransactionQueue, ^{
+    dispatch_sync(JY_REALM_TRANSACTION_QUEUE, ^{
         RLMRealm *realm = JY_Realm;
         [realm beginWriteTransaction];
         [realm deleteAllObjects];

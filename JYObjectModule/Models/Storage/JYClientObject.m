@@ -8,6 +8,7 @@
 
 #import "JYClientObject.h"
 #import "RLMObject+KeyValue.h"
+#import "JYRealmManager.h"
 #import <Realm/Realm.h>
 #import <objc/runtime.h>
 #import <CocoaSecurity/CocoaSecurity.h>
@@ -138,23 +139,23 @@
             
             if (client.actived && client.index == 1) {
                 // Client actived.
-                [client.realm beginWriteTransaction];
-                client.atUpdation = [[NSDate date] timeIntervalSince1970];
-                [client.realm commitWriteTransaction];
+                [JY_RealmManager syncTransaction:^(RLMRealm * _Nonnull realm) {
+                    client.atUpdation = [[NSDate date] timeIntervalSince1970];
+                } inRealm:client.realm];
             } else {
-                [client.realm beginWriteTransaction];
-                client.actived = YES;
-                client.index = 1;
-                client.atUpdation = [[NSDate date] timeIntervalSince1970];
-                [client.realm commitWriteTransaction];
+                [JY_RealmManager syncTransaction:^(RLMRealm * _Nonnull realm) {
+                    client.actived = YES;
+                    client.index = 1;
+                    client.atUpdation = [[NSDate date] timeIntervalSince1970];
+                } inRealm:client.realm];
             }
             
         } else {
-            [client.realm beginWriteTransaction];
-            client.actived = NO;
-            client.index = 0;
-            client.atUpdation = [[NSDate date] timeIntervalSince1970];
-            [client.realm commitWriteTransaction];
+            [JY_RealmManager syncTransaction:^(RLMRealm * _Nonnull realm) {
+                client.actived = NO;
+                client.index = 0;
+                client.atUpdation = [[NSDate date] timeIntervalSince1970];
+            } inRealm:client.realm];
         }
     }
     
@@ -162,10 +163,9 @@
         // Create a new client object.
         JYRLMObject<JYClientObject> *client = [clsOfClient objectWithKeyValue:@{@"objectId":userId, @"userId":userId, @"index":@1, @"atUpdation":@([[NSDate date] timeIntervalSince1970]), @"atCreation":@([[NSDate date] timeIntervalSince1970]), @"actived":@1}];
         //
-        RLMRealm *realm = [RLMRealm defaultRealm];
-        [realm beginWriteTransaction];
-        [realm addOrUpdateObject:client];
-        [realm commitWriteTransaction];
+        [JY_RealmManager syncTransaction:^(RLMRealm * _Nonnull realm) {
+            [realm addOrUpdateObject:client];
+        } inRealm:[RLMRealm defaultRealm]];
     }
 }
 
@@ -189,11 +189,11 @@
     JYRLMObject<JYClientObject> *client = [clsOfClient objectForPrimaryKey:userId];
     // unactive client if client object exits in realm.
     if (client) {
-        [client.realm beginWriteTransaction];
-        client.actived = NO;
-        client.index = 0;
-        client.atUpdation = [[NSDate date] timeIntervalSince1970];
-        [client.realm commitWriteTransaction];
+        [JY_RealmManager syncTransaction:^(RLMRealm * _Nonnull realm) {
+            client.actived = NO;
+            client.index = 0;
+            client.atUpdation = [[NSDate date] timeIntervalSince1970];
+        } inRealm:client.realm];
         return YES;
     }
     return NO;

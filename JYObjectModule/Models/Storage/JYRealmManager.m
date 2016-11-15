@@ -30,7 +30,7 @@
 @end
 
 @implementation JYRealmManager
-@synthesize memoryRealm=_memoryRealm, serialQueue=_serialQueue, concurrentQueue=_concurrentQueue;
+@synthesize memoryRealm=_memoryRealm, queue=_queue;
 + (instancetype)sharedManager {
     static id _sharedInstance = nil;
     static dispatch_once_t oncePredicate;
@@ -42,8 +42,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _serialQueue = dispatch_queue_create("com.jiangyou.realm.transaction.serial", DISPATCH_QUEUE_SERIAL);
-        _concurrentQueue = dispatch_queue_create("com.jiangyou.realm.transaction.concurrent", DISPATCH_QUEUE_CONCURRENT);
+        _queue = dispatch_queue_create("com.jiangyou.realm.transaction", DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }
@@ -80,7 +79,7 @@
 }
 
 - (void)syncTransaction:(JYRealmWriteTransactionBlock)transaction inRealm:(RLMRealm * _Nullable)realm {
-    dispatch_sync(_concurrentQueue, ^{
+    dispatch_sync(_queue, ^{
         @autoreleasepool {
             @try {
                 [realm beginWriteTransaction];
@@ -110,7 +109,7 @@
 }
 
 - (void)asynsTransaction:(JYRealmWriteTransactionBlock)transaction inRealm:(RLMRealm *)realm completion:(JYRealmWriteTransactionCompletionBlock)completion {
-    dispatch_async(_serialQueue, ^{
+    dispatch_async(_queue, ^{
         @autoreleasepool {
             @try {
                 [realm beginWriteTransaction];

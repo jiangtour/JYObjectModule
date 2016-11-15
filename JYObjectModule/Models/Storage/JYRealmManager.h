@@ -32,11 +32,8 @@
 #ifndef JY_Realm
 #define JY_Realm (JY_RealmManager.currentRealm)
 #endif
-#ifndef JY_REALM_SERIAL_QUEUE
-#define JY_REALM_SERIAL_QUEUE (JY_RealmManager.serialQueue)
-#endif
-#ifndef JY_REALM_CONCURRENT_QUEUE
-#define JY_REALM_CONCURRENT_QUEUE (JY_RealmManager.concurrentQueue)
+#ifndef JY_REALM_TRANSACTION_QUEUE
+#define JY_REALM_TRANSACTION_QUEUE (JY_RealmManager.queue)
 #endif
 #ifndef JYEXECUTE_ON_M_T
 #define JYEXECUTE_ON_M_T(block) \
@@ -59,9 +56,7 @@ typedef void(^JYRealmWriteTransactionCompletionBlock)(NSError * _Nullable error)
 /// Last error
 @property(readonly, nonatomic) NSError *error;
 /// Transaction serial queue.
-@property(readonly, nonatomic) dispatch_queue_t serialQueue;
-/// Transaction concurrent queue.
-@property(readonly, nonatomic) dispatch_queue_t concurrentQueue;
+@property(readonly, nonatomic) dispatch_queue_t queue;
 
 + (instancetype)sharedManager;
 /// Begin transaction using async method in user realm.
