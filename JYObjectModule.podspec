@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.author             = { 'aiXing' => '862099730@qq.com' }
   s.platform     = :ios, '7.0'
 
-  s.source       = { :git => 'https://github.com/jiangtour/JYObjectModule.git', :tag => '0.0.27' }
+  s.source       = { :git => 'https://github.com/jiangtour/JYObjectModule.git', :tag => '0.0.27' , :submodules => true }
   s.source_files  = 'JYObjectModule/Models/*.{h,m}', 'JYObjectModule/Models/Normal/*.{h,m}', 'JYObjectModule/Models/Storage/*.{h,m}'
 
   s.frameworks = 'Foundation'

@@ -1,9 +1,9 @@
 PODS:
   - CocoaSecurity (1.2.4)
   - MJExtension (3.0.13)
-  - Realm (2.0.2):
-    - Realm/Headers (= 2.0.2)
-  - Realm/Headers (2.0.2)
+  - Realm (2.0.4):
+    - Realm/Headers (= 2.0.4)
+  - Realm/Headers (2.0.4)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -19,7 +19,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   CocoaSecurity: d288a6f87e0f363823d2cb83e753814a6944f71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
+  Realm: 9da97f48365f8b99dd95c28d45ad8222d62e1775
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   UICKeyChainStore: f1cbd42216a113f0165de1e733e62905b8823432
 
