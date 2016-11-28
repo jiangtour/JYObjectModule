@@ -26,7 +26,7 @@
 #import "JYProductObject.h"
 
 @implementation JYProductObject
-@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, state, substate, url, title, detail, thumbnail, images, characteristics;
+@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, state, substate, url, title, detail, thumbnail, images, characteristics, characteristics2;
 
 + (void)load {
     [super load];
@@ -35,7 +35,7 @@
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {
-    return [[super indexedProperties] addObjectsFromArray:@[@"state", @"substate", @"characteristics", @"url", @"title", @"detail"]];
+    return [[super indexedProperties] addObjectsFromArray:@[@"state", @"substate", @"characteristics", @"characteristics2", @"url", @"title", @"detail"]];
 }
 + (nullable NSDictionary *)defaultPropertyValues
 {

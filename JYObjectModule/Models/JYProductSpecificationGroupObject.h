@@ -45,6 +45,10 @@
  Image url of specification group.
  */
 @property(copy, nonatomic, nullable) NSString *image;
+/**
+ Linked object id of JYSpecificationObject: |a|b|
+ */
+@property(copy, nonatomic, nullable) NSString *links;
 @end
 /**
  Specification group object.

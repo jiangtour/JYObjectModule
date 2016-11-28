@@ -47,6 +47,10 @@
  */
 @property(assign, nonatomic) int64_t characteristics;
 /*!
+ *  Characteristics version 2 of product object using string object: |a|b|
+ */
+@property(copy, nonatomic, nullable) NSString *characteristics2;
+/*!
  *  Product detail url of product object.
  */
 @property(copy, nonatomic, nullable) NSString *url;
