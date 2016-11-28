@@ -26,7 +26,7 @@
 #import "JYProductSpecificationGroupObject.h"
 
 @implementation JYProductSpecificationGroupObject
-@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, price, onhand, constant, image;
+@synthesize objectId, userId, index, atUpdation, atCreation, descriptions, price, onhand, constant, image, links;
 + (void)load {
     [super load];
 }
@@ -34,7 +34,7 @@
 #pragma mark - Realm support
 + (NSArray *)indexedProperties
 {
-    return [[super indexedProperties] addObjectsFromArray:@[@"price", @"onhand", @"constant", @"image"]];
+    return [[super indexedProperties] addObjectsFromArray:@[@"price", @"onhand", @"constant", @"image", @"links"]];
 }
 + (nullable NSDictionary *)defaultPropertyValues
 {
