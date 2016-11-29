@@ -57,6 +57,7 @@
 		DCA640D81DAF723C005FC2DE /* JYProductCrowdObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA640D71DAF723C005FC2DE /* JYProductCrowdObject.m */; };
 		DCA640DB1DAF7418005FC2DE /* JYProductSpecificationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA640DA1DAF7418005FC2DE /* JYProductSpecificationObject.m */; };
 		DCA640DE1DAF7509005FC2DE /* JYProductSpecificationGroupObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA640DD1DAF7509005FC2DE /* JYProductSpecificationGroupObject.m */; };
+		DCBDD8D51DED5E87005023AE /* JYSocialPlatformObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBDD8D41DED5E87005023AE /* JYSocialPlatformObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +179,8 @@
 		DCA640DA1DAF7418005FC2DE /* JYProductSpecificationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYProductSpecificationObject.m; sourceTree = "<group>"; };
 		DCA640DC1DAF7509005FC2DE /* JYProductSpecificationGroupObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYProductSpecificationGroupObject.h; sourceTree = "<group>"; };
 		DCA640DD1DAF7509005FC2DE /* JYProductSpecificationGroupObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYProductSpecificationGroupObject.m; sourceTree = "<group>"; };
+		DCBDD8D31DED5E87005023AE /* JYSocialPlatformObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYSocialPlatformObject.h; sourceTree = "<group>"; };
+		DCBDD8D41DED5E87005023AE /* JYSocialPlatformObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYSocialPlatformObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +340,8 @@
 				DCA640DA1DAF7418005FC2DE /* JYProductSpecificationObject.m */,
 				DCA640DC1DAF7509005FC2DE /* JYProductSpecificationGroupObject.h */,
 				DCA640DD1DAF7509005FC2DE /* JYProductSpecificationGroupObject.m */,
+				DCBDD8D31DED5E87005023AE /* JYSocialPlatformObject.h */,
+				DCBDD8D41DED5E87005023AE /* JYSocialPlatformObject.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -609,6 +614,7 @@
 				01A112111D6EA6FE00131431 /* JYOrderObject.m in Sources */,
 				01A112431D70921400131431 /* JYChargeObject.m in Sources */,
 				01A111F61D6DD6AC00131431 /* JYBannerObject.m in Sources */,
+				DCBDD8D51DED5E87005023AE /* JYSocialPlatformObject.m in Sources */,
 				01A1123D1D706E5A00131431 /* JYUserVerifyResponseObject.m in Sources */,
 				01A1121A1D6EBFC200131431 /* JYChainObject.m in Sources */,
 				01A112141D6EA76200131431 /* JYProductObject.m in Sources */,
